@@ -4,94 +4,143 @@
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "java",
-            "name": "Ex04_switch_hakjum_random",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex04_switch_hakjum_random",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex02_for",
-            "request": "launch",
-            "mainClass": "com.lec.loop.Ex02_for",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex01_for",
-            "request": "launch",
-            "mainClass": "com.lec.loop.Ex01_for",
-            "projectName": "ch04_control"
-        },
-        {
-            "name": "Java",
-            "type": "java",
-            "request": "launch",
-            "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
-            "cwd": "${fileDirname}",
-            "startupClass": "${fileBasenameNoExtension}",
-            "classpath": [
-                ".",
-                "${fileDirname}"
-            ]
-        },
-        {
-            "name": "Java Console App",
-            "type": "java",
-            "request": "launch",
-            "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
-            "cwd": "${fileDirname}",
-            "startupClass": "${fileBasenameNoExtension}",
-            "classpath": [
-                ".",
-                "${fileDirname}"
-            ],
-            "externalConsole": true
-        },
-        {
-            "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Ex01_if",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex01_if",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex02_if",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex02_if",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex04_if_hakjum",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex04_if_hakjum",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex04_switch_hakjum",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex04_switch_hakjum",
-            "projectName": "ch04_control"
-        },
-        {
-            "type": "java",
-            "name": "Ex05",
-            "request": "launch",
-            "mainClass": "com.lec.condition.Ex05",
-            "projectName": "ch04_control"
-        }
+      {
+        "type": "java",
+        "name": "Ex09_while",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex09_while",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex08_while",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex08_while",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex07_while",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex07_while",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex06_endless",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex06_endless",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex05_break_continue",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex05_break_continue",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex04_for",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex04_for",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex03_for_star",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex03_for_star",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex04_switch_hakjum_random",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex04_switch_hakjum_random",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex02_for",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex02_for",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex01_for",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex01_for",
+        "projectName": "ch04_control"
+      },
+      {
+        "name": "Java",
+        "type": "java",
+        "request": "launch",
+        "stopOnEntry": true,
+        "jdkPath": "${env:JAVA_HOME}/bin",
+        "cwd": "${fileDirname}",
+        "startupClass": "${fileBasenameNoExtension}",
+        "classpath": [
+          ".",
+          "${fileDirname}"
+        ]
+      },
+      {
+        "name": "Java Console App",
+        "type": "java",
+        "request": "launch",
+        "stopOnEntry": true,
+        "jdkPath": "${env:JAVA_HOME}/bin",
+        "cwd": "${fileDirname}",
+        "startupClass": "${fileBasenameNoExtension}",
+        "classpath": [
+          ".",
+          "${fileDirname}"
+        ],
+        "externalConsole": true
+      },
+      {
+        "type": "java",
+        "name": "Current File",
+        "request": "launch",
+        "mainClass": "${file}"
+      },
+      {
+        "type": "java",
+        "name": "Ex01_if",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex01_if",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex02_if",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex02_if",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex04_if_hakjum",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex04_if_hakjum",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex04_switch_hakjum",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex04_switch_hakjum",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex05",
+        "request": "launch",
+        "mainClass": "com.lec.condition.Ex05",
+        "projectName": "ch04_control"
+      }
     ]
 }
