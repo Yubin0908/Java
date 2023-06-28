@@ -1,6 +1,5 @@
+package com.lec.condition
 
-/* package com.lec.condition;
- */
 import java.util.Scanner;
 
 //두수를 입력받아 몇번째 수가 얼마만큼 더 큰지 출력
