@@ -6,6 +6,55 @@
     "configurations": [
       {
         "type": "java",
+        "name": "LoopQuiz",
+        "request": "launch",
+        "mainClass": "com.lec.loopQuiz.LoopQuiz",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Quiz5",
+        "request": "launch",
+        "mainClass": "com.lec.conditionQuiz.Quiz5",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Quiz4",
+        "request": "launch",
+        "mainClass": "com.lec.conditionQuiz.Quiz4",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Quiz3",
+        "request": "launch",
+        "mainClass": "com.lec.conditionQuiz.Quiz3",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Quiz2",
+        "request": "launch",
+        "mainClass": "com.lec.conditionQuiz.Quiz2",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Quiz1",
+        "request": "launch",
+        "mainClass": "com.lec.conditionQuiz.Quiz1",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Ex10_doWhile",
+        "request": "launch",
+        "mainClass": "com.lec.loop.Ex10_doWhile",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
         "name": "Ex09_while",
         "request": "launch",
         "mainClass": "com.lec.loop.Ex09_while",
