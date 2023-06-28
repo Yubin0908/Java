@@ -2,37 +2,33 @@ package com.lec.condition;
 
 import java.util.Scanner;
 
-//µÎ¼ö¸¦ ÀÔ·Â¹Ş¾Æ ¸î¹øÂ° ¼ö°¡ ¾ó¸¶¸¸Å­ ´õ Å«Áö Ãâ·Â
+//ë‘ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ëª‡ë²ˆì§¸ ìˆ˜ê°€ ì–¼ë§ˆë§Œí¼ ë” í°ì§€ ì¶œë ¥
 public class Ex02_if {
 
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in); 
-		
-			
-		System.out.print( "Ã¹¹øÂ° ¼ö´Â : " );
-		
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ëŠ” : ");
+
 		int num1 = scanner.nextInt();
-		
-		
-		System.out.print( "µÎ¹øÂ° ¼ö´Â : " );
-		
+
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ëŠ” : ");
+
 		int num2 = scanner.nextInt();
-		
-		if( num1 > num2 ) {
-			
-			System.out.printf("Ã¹¹øÂ° ¼ö(%d)°¡ %d¸¸Å­ ´õ Å®´Ï´Ù.\n", num1, (num1-num2));
-			
-			
-		}else if( num2 > num1) {
-			
-			System.out.printf("µÎ¹øÂ° ¼ö(%d)°¡ %d¸¸Å­ ´õ Å®´Ï´Ù\n", num2, (num2-num1));
-			
-		}else {
-			System.out.println("µÎ ¼ö°¡ °°½À´Ï´Ù.");
-		
-		
+
+		if (num1 > num2) {
+
+			System.out.printf("ì²«ë²ˆì§¸ ìˆ˜(%d)ê°€ %dë§Œí¼ ë” í½ë‹ˆë‹¤.\n", num1, (num1 - num2));
+
+		} else if (num2 > num1) {
+
+			System.out.printf("ë‘ë²ˆì§¸ ìˆ˜(%d)ê°€ %dë§Œí¼ ë” í½ë‹ˆë‹¤\n", num2, (num2 - num1));
+
+		} else {
+			System.out.println("ë‘ ìˆ˜ê°€ ê°™ìŠµë‹ˆë‹¤.");
+
 		}
-		
+
 	}
 }
