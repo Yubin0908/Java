@@ -7,6 +7,7 @@ public class LoopQuiz {
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in); //
+
     while (true) {
 
       int com = (int) (Math.random() * 3); // 1 ~ 3 사이의 난수 발생

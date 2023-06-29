@@ -6,6 +6,34 @@
     "configurations": [
       {
         "type": "java",
+        "name": "Ex_02",
+        "request": "launch",
+        "mainClass": "com.lec.loopQuiz.Ex_02",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Gugudan_04",
+        "request": "launch",
+        "mainClass": "com.lec.loopQuiz.Gugudan_04",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Gugudan_03",
+        "request": "launch",
+        "mainClass": "com.lec.loopQuiz.Gugudan_03",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
+        "name": "Gugudan",
+        "request": "launch",
+        "mainClass": "com.lec.loopQuiz.Gugudan",
+        "projectName": "ch04_control"
+      },
+      {
+        "type": "java",
         "name": "LoopQuiz",
         "request": "launch",
         "mainClass": "com.lec.loopQuiz.LoopQuiz",

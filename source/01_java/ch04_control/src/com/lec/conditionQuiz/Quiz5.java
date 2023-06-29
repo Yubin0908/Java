@@ -13,9 +13,8 @@ public class Quiz5 {
     // 3월 ~ 5월 봄
     if (season == 0 || season >= 13) {
       System.out.println("잘못된 값입니다.");
-    }
 
-    else if (3 <= season && season <= 5) {
+    } else if (3 <= season && season <= 5) {
       System.out.println("입력하신 달은 봄입니다.");
 
       // 6월 ~ 8월 여름
