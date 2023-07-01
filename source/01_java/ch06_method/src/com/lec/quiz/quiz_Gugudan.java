@@ -8,10 +8,15 @@ public class quiz_Gugudan {
 
 		Scanner num = new Scanner(System.in);
 
-		System.out.println("원하는 값(2~9사이)을 입력하세요 : ");
-
-		int user = num.nextInt();
-
+		int user;
+		
+		do {
+			
+			System.out.println("원하는 값(2~9사이)을 입력하세요 : ");
+			
+			user = num.nextInt();
+			
+		}while(user < 2 || 9 < user);
 		
 		gugudan(user);
 
