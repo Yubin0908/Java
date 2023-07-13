@@ -1,0 +1,12 @@
+[String의 문제점]
+
+- 메모리 과소비 : 초기화된 데이터가 변경된 경우, 기존 데이터를 재활용 하지 않고 새로운 메모리를 생성.
+- 그래서 속도적인 측면에서 개선된 StringBuffer 와 StringBuilder가 등장함.
+
+※ StringBuffer 와 StringBuilder 의 차이
+- 기능은 동일하나 StringBuilder가 속도 면에서 좀 더 빠름.
+
+[Date API]
+※날짜와 시간을 표현할 때 많이 쓰이는 Calendar클래스는 싱글톤클래스
+※날짜와 시간을 표현할 때 많이 쓰이는 GregorianCalendar클래스는 일반클래스
+
