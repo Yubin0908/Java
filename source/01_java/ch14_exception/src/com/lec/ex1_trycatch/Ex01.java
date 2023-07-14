@@ -1,4 +1,4 @@
-package Ex1_tryCatch;
+package com.lec.ex1_trycatch;
 
 import java.util.Scanner;
 
