@@ -10,7 +10,7 @@ public class Friend {
 	private String phone;
 	private String address;
 	private Date birthday;
-	
+
 	
 	public Friend(String name, String phone, String address, Date birthday) {
 		

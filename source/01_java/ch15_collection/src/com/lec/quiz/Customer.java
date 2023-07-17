@@ -12,6 +12,13 @@ public class Customer {
 		this.tel = tel;
 		this.address = address;
 	}
+	
+	public Customer() {
+
+		this.name = name;
+		this.tel = tel;
+		this.address = address;
+	}
 
 	@Override
 	public String toString() {

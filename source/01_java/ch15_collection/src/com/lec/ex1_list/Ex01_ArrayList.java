@@ -53,6 +53,7 @@ public class Ex01_ArrayList {
 			
 		}
 		arrayList.remove(2); //2번째 인덱스의 값이 제거됨.(3번째 인덱스가 2로 내려옴.)
+		
 		arrayList.remove(arrayList.size() - 1);// 맨 마지막 인덱스 값 제거
 		
 		System.out.println("====  2번째 인덱스값 제거 & 맨 마지막 인덱스값 제거 후  =====");
