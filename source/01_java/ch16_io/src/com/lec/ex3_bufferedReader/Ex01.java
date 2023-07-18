@@ -1,4 +1,4 @@
-package com.lec.ex4_bufferedReader;
+package com.lec.ex3_bufferedReader;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
