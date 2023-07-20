@@ -183,8 +183,39 @@
   SELECT ENAME, SAL, HIREDATE FROM EMP ORDER BY HIREDATE DESC; -- 입사일 내림차순 정렬
   
   
-  
-    
+    --- SELECT 연습문제 ---
+    --1. EMP 테이블에서 sal이 3000이상인 사원의 empno, ename, job, sal을 출력
+  SELECT EMPNO, ENAME, JOB, SAL FROM EMP WHERE SAL>3000;
+    --2. EMP 테이블에서 empno가 7788인 사원의 ename과 deptno를 출력
+  SELECT ENAME, DEPTNO FROM EMP WHERE EMPNO=7788;
+    --3. 연봉(SAL*12+COMM)이 24000 이상인 사번, 이름, 급여 출력 (급여순정렬)
+  SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL*12+NVL(COMM, 0) >2400 ORDER BY SAL;
+    --4. 입사일이 1981년 2월 20과 1981년 5월 1일 사이에 입사한 사원의 이름, 직책, 입사일을 출력 (단 hiredate 순으로 출력)
+  SELECT ENAME, JOB, HIREDATE FROM EMP WHERE TO_CHAR(HIREDATE, 'RR/MM/DD') >= '81/02/20' AND TO_CHAR(HIREDATE, 'RR/MM/DD') <='81/05/01' ORDER BY HIREDATE;
+    --5. deptno가 10,20인 사원의 모든 정보를 출력 (단 ename순으로 정렬)
+  SELECT * FROM EMP WHERE DEPTNO IN (10, 20) ORDER BY ENAME;
+    --6. sal이 1500이상이고 deptno가 10,30인 사원의 ename과 sal를 출력(단 TITLE을 employee과 Monthly Salary로 출력)
+  SELECT ENAME employee, SAL "Monthly Salary" FROM EMP WHERE SAL > 1500 AND DEPTNO IN (10, 20);
+    --7. hiredate가 1982년인 사원의 모든 정보를 출력
+  SELECT * FROM EMP WHERE TO_CHAR(HIREDATE, 'RR/MM/DD') LIKE '82/__/__';
+    --8. 이름의 첫자가 C부터 P로 시작하는 사람의 이름, 급여 출력(이름순 정렬)
+  SELECT ENAME, SAL FROM EMP WHERE ENAME LIKE 'C%' OR ENAME LIKE 'P%' ORDER BY ENAME;
+    --9. comm이 sal보다 10%이상 많은 모든 사원에 대하여 이름, 급여, 상여금을 출력
+  SELECT ENAME, SAL, NVL(COMM, 0) FROM EMP WHERE NVL(COMM,0) > SAL*1.1;
+    --10. job이 CLERK이거나 ANALYST이고 sal이 1000,3000,5000이 아닌 모든 사원의 정보를 출력
+  SELECT * FROM EMP WHERE JOB='CLERK' OR JOB='ANALYST' OR SAL NOT IN (1000, 3000, 5000);  
+    --11. ename에 L이 두 자가 있고 deptno가 30이거나 또는 mgr이 7782인 사원의 모든 정보를 출력
+  SELECT * FROM EMP WHERE ENAME LIKE '%L%L%' OR DEPTNO=30 OR MGR=7782;
+    --12. 입사일이81년이고 업무가 'SALESMAN'이 아닌 직원의 사번, 사원명, 입사일, 업무, 급여를 출력.
+  SELECT EMPNO, ENAME, HIREDATE, JOB, SAL FROM EMP WHERE TO_CHAR(HIREDATE, 'RR/MM/DD') LIKE '81/__/__' AND NOT JOB='SALESMAN';
+    --13. 사번, 사원명, 입사일, 업무, 급여를 급여가 높은 순으로 정렬하고, 급여가 같으면 입사일이 빠른 사원으로 정렬하여 출력
+  SELECT EMPNO, ENAME, HIREDATE, JOB, SAL FROM EMP ORDER BY SAL, TO_CHAR(HIREDATE, 'RR/MM/DD');
+    --14. 사원명의 세 번째 알파벳이 ＇N＇인 사원의 사번, 사원명을 출력
+  SELECT EMPNO, ENAME FROM EMP WHERE ENAME LIKE '__N%';
+    --15. 사원명에 ‘A’가 들어간 사원의 사번, 사원명을 출력
+  SELECT EMPNO, ENAME FROM EMP WHERE ENAME LIKE '%A%';
+    --16. 연봉(SAL*12)이 35000 이상인 사번, 사원명, 연봉을 검색
+  SELECT EMPNO, ENAME, SAL*12+NVL(COMM, 0) FROM EMP WHERE SAL*12+NVL(COMM, 0) > 35000;
     
     
     
