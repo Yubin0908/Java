@@ -1,0 +1,21 @@
+[DDL , DCL, DML 명령어]
+
+- [1] DML 
+	- INSERT : DB객체에 데이터 입력
+	- DELETE : DB객체에 데이터 삭제
+	- UPDATE : 기존 DB객체의 데이터 수정
+	- SELECT : DB객체의 데이터 검색
+
+- [2] DDL
+	- CREATE : DB객체 생성
+	- DROP : DB객체 삭제
+	- ALTER : 기존 DB객체 재정의
+	- TRUNCATE : DB객체 내용 삭제
+
+- [3] DCL
+	- GRANT : DB객체 권한 부여
+	- REVOKE : 기존 DB객체의 권한 취소
+	-	TCL 명령어	-
+	- COMMIT : 트랜잭션 확정
+	- ROLLBACK : 트랜잭션 취소
+	- SAVEPOINT : 복귀지점 설정

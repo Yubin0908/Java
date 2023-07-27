@@ -1,0 +1,37 @@
+
+  -- 테이블 생성 및 삭제 --
+DROP TABLE MAJOR;
+DROP TABLE STUDENT;
+
+CREATE TABLE MAJOR (
+  mCODE NUMBER(1) PRIMARY KEY,
+  mNAME VARCHAR2(30),
+  mOFFICE VARCHAR2(50)
+  );
+  
+CREATE TABLE STUDENT (
+  sNO VARCHAR2(3) PRIMARY KEY,
+  sNAME VARCHAR2(50),
+  sSCORE NUMBER(3),
+  mCODE NUMBER(1) REFERENCES MAJOR(mCODE)
+  );
+  
+  -- 데이터 입력 --
+INSERT INTO MAJOR VALUES (1, '컴퓨터공학', 'A101호');
+INSERT INTO MAJOR VALUES (2, '빅데이터', 'A102호');
+
+INSERT INTO STUDENT VALUES ('101', '홍길동', 99, 1);
+INSERT INTO STUDENT VALUES ('102', '신길동', 100, 2);
+
+  -- 데이터 출력 -- 
+SELECT sNO 학번, sNAME 이름, sSCORE 점수, S.mCODE 학과코드, mNAME 학과명, mOFFICE 학과사무실
+  FROM MAJOR M, STUDENT S
+  WHERE M.mCODE = S.mCODE;
+  
+  
+  
+  
+  
+  
+  
+  
