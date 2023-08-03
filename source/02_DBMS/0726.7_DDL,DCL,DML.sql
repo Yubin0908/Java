@@ -230,6 +230,26 @@ SELECT * FROM SAM01;
 SELECT * FROM EMP01;
 ROLLBACK;
 --=========================================================================================================================--
+--[3] DCL : 계정생성, 권한부여, 권한박탈, 계정삭제
+  -- 계정 생성
+CREATE USER scott2 IDENTIFIED BY tiger;
+
+  -- 권한 부여(세션권한 == 로그인가능)
+GRANT CREATE SESSION TO scott2;
+GRANT CREATE TABLE TO scott2;
+GRANT ALL ON EMP TO scott2;
+GRANT SELECT ON DEPT TO scott2;
+
+  -- 권한 박탈(DEPT, EMP)
+REVOKE ALL ON EMP FROM scott2;
+REVOKE SELECT ON DEPT FROM scott2;
+
+  -- 계정 삭제(scott2) -- 
+DROP USER scott2 CASCADE;
+
+
+
+--=========================================================================================================================--
 -- 제약조건 --
   -- (1) PRIMARY KEY : 테이블의 각 행을 유일한 값으로 식별하기 위한 필드
   -- (2) FOREIGN KEY : 테이블의 열이 다른 테이블의 열을 참조
@@ -296,8 +316,6 @@ INSERT INTO DEPT1 VALUES (50, 'IT', 'SEOUL');
 SELECT * FROM EMP1;
 SELECT * FROM DEPT1;
 ROLLBACK;
-
-
 
 --=========================================================================================================================--
   -- ☆ 연 습 문 제 ☆
