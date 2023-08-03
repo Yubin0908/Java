@@ -182,9 +182,8 @@ select pno, pname, pay
     order by pay desc;
     
 	-- 5. 사번, 이름, 부서번호, 급여. 부서코드 순 정렬 같으면 PAY 큰순
-select pno, pname, p.dno, pay
-	from personal p, division d
-    where p.dno = d.dno
+select pno, pname, dno, pay
+	from personal
     order by dno desc, pay desc;
 
 	-- 6. 사번, 이름, 부서명
@@ -224,29 +223,109 @@ select dname, round(avg(pay)), count(*)
     group by dname;
     
 	-- 13. 부서코드, 급여합계, 인원수 인원수가 4명 이상인 부서만 출력
-select p.dno, sum(pay), count(pno) 
+select p.dno, sum(pay), count(*) 
 	from personal p, division d
-    where p.dno = d.dno and 
-    group by p.dno;
+    where p.dno = d.dno 
+    group by dno
+	having count(*) >= 4 ;
     
 	-- 14. 사번, 이름, 급여 회사에서 제일 급여를 많이 받는 사람
 select pno, pname, pay
 	from personal
-	where pay > max(pay) 
-    group by pno;
+    where pay = (select max(pay) from personal);
     
 	-- 15. 회사 평균보다 급여를 많이 받는 사람 이름, 급여, 부서번호
-
+select pname, pay, dno
+	from personal
+    where pay > (select avg(pay) from personal);
+    
 	-- 16. 회사 평균 급여보다 많이 받는 사원의 사번, 이름, 급여, 부서명을 출력(부서명순 정열 같으면 급여 큰순 정렬)
+select pno, pname, pay, dname
+	from personal p, division d
+    where p.dno = d.dno and pay > (select round(avg(pay)) from personal)
+    order by dname, pay desc;
 
 	-- 17. 자신이 속한 부서의 평균보다 많인 받는 사람의 이름, 급여, 부서번호, 반올림한 해당부서평균
+select pname, pay, dno, round((select avg(pay) from personal where dno=p.dno)) as avg
+	from personal p
+    where pay >= (select round(avg(pay)) from personal);
 
 	-- 18. 입사가 가장 빠른 사람의 이름, 급여, 부서명
-	 
+select p.pname, p.pay, d.dname, max(startdate)
+	from personal p, division d
+    where p.dno = d.dno;
+
 	-- 19. 이름, 급여, 해당부서평균
-
+select p.pname, p.pay, pay.avg
+	from personal p join (select dno, round(avg(pay) ,1) AS avg from personal group by dno) AS pay on p.dno = pay.dno;
+    
 	-- 20. 이름, 급여, 부서명, 해당부서평균
+select p.pname, p.pay, dname, pay.avg
+	from personal p join (select dno, round(avg(pay) ,1) AS avg from personal group by dno) AS pay on p.dno = pay.dno, division d
+	where p.dno = d.dno;
+ 
 
-		
-		
-		
+	-- Oracle에서의 단일행함수(컬럼함수)와 다른 부분
+select curdate();	-- 현재 날짜
+select * from personal;
+
+insert into personal values (1000, '홍길동', 'manager', 1001, curdate(), null, null, 40);
+select * from personal where pno=1000;
+
+delete from personal where pno=1000;
+
+	-- ex. '이름은 job이다' 포맷으로 출력
+select concat(pname, '은', job, '이다.') AS msg from personal;
+select round(35.5678,2); -- from절 없이도 실행가능
+
+	-- system으로부터 현재시점(datetime), 현재날짜(date), 현재시간(time)
+select sysdate(), now(); -- 현재시점
+select current_date(), curdate(); -- 현재날짜
+select current_time(), curtime(); -- 현재시간
+
+select year(now()), month(now()), day(now()), hour(now()), minute(now()), second(now());
+select monthname(now()); -- 달이음
+select dayname(startdate) from personal; -- 요일 
+
+select case weekday(now())
+	when '0' then '월요일'
+    when '1' then '화요일'
+    when '2' then '수요일'
+    when '3' then '목요일'
+    when '4' then '금요일'
+    when '5' then '토요일'
+    when '6' then '일요일' end dayofweek;
+
+	-- to_char(날짜, 포맷) : 날짜가 문자로 변경 ==> date_format(now(), '%Y-%m-%d')
+	-- to_date(문자, 포맷) : 문자가 날짜로 변경 ==> date_format('2023-07-31', '%Y-%m-%d')
+		-- format : %Y(year-4), %y(year-2), %m(month-2), %c(month-1), %M(month_name), %d(day not '0'), %e(day in '0'), %H(24hour), %h(12hour), %p(am,pm), %i(minute), %s(second)
+select  date_format(now(), '%Y년 %c월 %e일 %p %h시 %i분') now; 
+
+	-- format(숫자, 소수점 자리수) : 세자리마다 ','. 소수점자리수까지 소수점이 출력
+select pname, format(pay, 2) from personal;
+
+	-- 이름, 급여. 급여가 3000이상인지 여부
+select pname, pay, if(pay >= 3000, '이상', '이하') AS '이하>3000<이상' from personal;
+
+
+	-- top-N 구문 --
+	-- limit n(1번째 ~ n번째)
+    -- limit n1, n2(n1번째부터 n2개. 첫번째 0번째)
+select pname, pay from personal order by pay desc;
+select pname, pay from personal order by pay desc limit 5; -- 1~5까지 출력
+select pname, pay from personal order by pay desc limit 5, 5; -- 5번째부터 5개 출력
+
+	-- 1등~3등
+select pname, pay from personal order by pay desc limit 3;
+    -- 4등~6등
+select pname, pay from personal order by pay desc limit 3, 3;
+    -- 7등~9등
+select pname, pay from personal order by pay desc limit 6, 3;
+
+
+
+
+
+
+
+
