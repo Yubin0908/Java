@@ -1,0 +1,24 @@
+JDBC 프로그래밍 단계 및 사용하는 클래스
+1. JDBC DRIVER LOAD
+ - 드라이버 클래스 로드
+ - Class.forName()
+
+2. DB CONNECTION
+ - DB Connection 객체 생성
+ - DriverManager.getConnection()
+
+3. STATEMENT CREATE
+ - SQL을 이용해 DB 조회 등
+ - java.statement()
+
+4. SQL UPLOAD
+ - SQL문 전송 및 결과 반환
+ - java.sql.Statement.executeQuery()
+
+5. Result
+ - SQL 실행 결과 반환
+ - java.sql.Connection.close()
+
+6.  UnConnection 
+ - DB 연결 해제
+ - java.sql.Connection.close()
