@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--페이지설정-->
+    <meta charset="utf-8" />
+    <title>첫예제</title>
+    <style>
+        body {
+            background-color : lightyellow;
+            font-size: 30pt;
+        }
+    </style>
+    <script> // 동적인 부분(DB연동 x) - javascript 문법
+        var name = prompt("이름입력 : ", "홍길동") //취소 클릭 시, 'null' return
+
+        if (name != "null" && name != "") {
+            document.write(name + " 반갑습니다.<br>")
+        } else {
+            window.alert("이름입력안됨")
+        }
+    </script>
+
+</head>
+
+<body>
+    <!--웹문서 출력될 정보-->
+    안녕하세요. <br>
+    오늘부터 웹표준 수업  &nbsp;&nbsp;&nbsp; 시작합니다.
+</body>
+
+</html>

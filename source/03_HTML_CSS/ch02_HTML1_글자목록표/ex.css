@@ -1,0 +1,10 @@
+
+/*ex.css (표태그2.html)사용*/
+table{background-color:red;}
+
+tr{background-color:yellow;}
+
+ tr:hover{background-color:lightgreen;}
+
+caption{background-color:lightyellow;}
+
