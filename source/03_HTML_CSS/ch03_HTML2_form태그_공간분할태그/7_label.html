@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>label</title>
+  <style>
+    .star {color: chocolate;}
+  </style>
+</head>
+<body>
+  <form action="#">
+    <fieldset>
+      <legend>필수 입력</legend>
+      <tr>
+        <td>
+          <label for="name">이 &nbsp; 름<b class="star"><sup>*</sup></b></label>
+          <input type="text" name="name" id="name" required="reuqired" autofocus="autofocus"><br>
+        </td>
+        <td>
+          <label for="id">아이디<b class="star"><sup>*</sup></b></label>
+          <input type="text" name="id" id="id" required="reuqired"><br>
+        </td>
+       
+        <td>
+          <label for="pw">비밀번호<b class="star"><sup>*</sup></b></label>
+          <input type="text" name="pw" id="pw" required="reuqired"><br>
+        </td>
+      </tr>
+    </fieldset>
+    <fieldset>
+      <legend>추가 입력 사항</legend>
+      <tr>
+        <tr>
+          <label for="tel">전화번호</label>
+          <input type="text" name="tel" id="tel">
+        </tr>
+        <tr>
+          <label for="email">이메일</label>
+          <input type="email" name="email" id="email">
+        </tr>
+        <tr>
+          사용기술
+          <input type="checkbox" name="tech" value="java" id="java">
+          <label for="java">JAVA</label>
+          <input type="checkbox" name="tech" value="DBMS" id="dbms">
+          <label for="dbms">DBMS</label>
+          <input type="checkbox" name="tech" value="html" id="html">
+          <label for="html">HTML</label>
+        </tr>
+      </tr>
+    </fieldset>
+    <p><center><input type="submit"></center></p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입력양식의 타입</title>
+</head>
+
+<body>
+  <form action="" method="get">
+    <table>
+      <tr>
+        <td>아이디</td>
+        <td><input type="text" name="uid" size="9">
+        <input type="button" value="중복확인">
+        </td>
+      </tr>
+      <tr>
+        <td>비밀번호</td>
+        <td><input type="password"></td>
+      </tr>
+        <td>전화번호</td>
+       <td><input type="text" name="phone1" size="2">-
+           <input type="text" name="phone2" size="2">-
+           <input type="text" name="phone3" size="2"></td>
+      </tr>
+        <td>경력</td>
+        <td><input type="text" name="career" size="5" min="0" max="60">년</td>
+      <tr>
+      <tr>
+        <td>이메일</td>
+        <td><input type="email" name="uemail"></td>
+      </tr>
+      <tr><!-- file uploader -->
+        <td>사진</td>
+        <td><input type="file" name="picture"></td>
+      </tr>
+      <tr><!-- radiobox -->
+        <td>성별</td>
+        <td><input type="radio" name="gender" value="m">남
+            <input type="radio" name="gender" value="f">여</td>
+      </tr>
+      <tr><!-- checkbox -->
+        <td>사용언어</td>
+        <td><input type="checkbox" name="kor">한국어
+            <input type="checkbox" name="eng">영어
+            <input type="checkbox" name="chi">중국어</td>
+      </tr>
+      <tr><!-- selector -->
+        <td>국적</td>
+        <td>
+          <select name="nation" style="width: 185px;">
+            <option>대한민국</option><option selected>미국</option><option>중국</option>
+          </select>
+        </td>
+      </tr>
+      <tr><!-- multiselector -->
+        <td>좋아하는 음식</td>
+        <td>
+          <select name="food" multiple="multipul" style="width: 185px;">
+            <option selected>볶음밥</option><option>비빔밥</option><option>주먹밥</option><option>라면</option><option>냉면</option>
+            <option>알밥</option><option>김밥</option><option>짬뽕밥</option><option>짜장밥</option><option>콜라</option>
+          </select>
+        </td>
+      </tr>
+      <tr><!-- textarea -->
+        <td>자기소개</td>
+        <td>
+          <textarea name="how" cols="23" rows="5"></textarea>
+        </td>
+      </tr>
+      <tr><!-- calander -->
+        <td>생일</td>
+        <td>
+          <input type="date" name="birth">
+        </td>
+      </tr>
+      <tr><!-- 색상 팔레트 -->
+        <td>좋아하는 색상</td>
+        <td><input type="color" name="color"></td>
+      </tr>
+      <tr><!-- range -->
+        <td>좋아하는 정도</td>
+        <td><input type="range" name="range" min="0" max="100" step="10" value="60"></td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <input type="submit" value="입력">
+          <input type="reset" value="초기화">
+        </th>
+      </tr>
+    </table>
+
+  </form>
+</body>
+</html>

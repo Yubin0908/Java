@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>placeholder, datalist</title>
+</head>
+<body>
+  <form action="">
+    <p>
+      전화
+      <input type="tel" name="tel" placeholder="000-0000-0000" required="required">
+    </p>
+    <p>
+      업무
+      <select name="job">
+          <option>분석</option>
+          <option>설계</option>
+          <option>구현</option>
+          <option>테스트</option>
+          <option>유지보수</option></select>
+    </p>
+    <p>
+      업무2
+      <input type="text" name="job2" list="joblist" placeholder="업무선택">
+      <datalist id="joblist">
+          <option>분석</option>
+          <option>설계</option>
+          <option>구현</option>
+          <option>테스트</option>
+          <option>유지보수</option></datalist>
+    </p>
+    <input type="submit" value="전송합니다">
+  </form>
+</body>
+</html>
