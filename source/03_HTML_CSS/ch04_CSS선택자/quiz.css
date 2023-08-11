@@ -1,0 +1,101 @@
+#header, #content, #footer {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.left, .right {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+
+.center {
+  float: left;
+  width: 693px;
+  height: 150px;
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+
+#content > div {
+  height: 300px;
+}
+
+#header .left {
+  border-radius: 20px 0 20px 0;
+}
+
+#header .center {
+  border-radius: 0 0 20px 20px;
+}
+
+#header .right {
+  border-radius: 0 20px 0 20px;
+}
+
+#content .left {
+  border-radius: 0 20px 20px 0;
+}
+
+#content .center {
+  border-radius: 20px;
+}
+
+#content .right {
+  border-radius: 20px 0 0 20px;
+}
+
+#footer .left {
+  border-radius: 0 20px 0 20px;
+}
+
+#footer .center {
+  border-radius: 20px 20px 0 0;
+}
+
+#footer .right {
+  border-radius: 20px 0 20px 0;
+}
+
+#content nav {
+  text-align: center;
+}
+
+#content nav ul {
+  text-align: center;
+  overflow: hidden;
+  padding: 0; 
+}
+
+#content nav ul li {
+  list-style-type: none;
+  display: inline-block; 
+  margin: 0 10px; 
+  padding : 0 60px 0 0;
+  
+}
+
+#content nav li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+
+#content #acadamy {
+  margin: 30px;
+  text-align: center;
+}
+
+#content p {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#content .red {
+  color: red;
+}

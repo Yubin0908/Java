@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상태선택자</title>
+  <style>
+    input:focus {
+      background-color: lightyellow;
+      border: 2px solid green;
+      outline: none;
+    }
+    input:disabled {
+      color: sandybrown;
+    }
+    input:enabled {
+      font-size: 0.7em;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    이름<input type="text" name="name" id=""><br>
+    아뒤<input type="text" name="id" id=""><br>
+    시급<input type="text" name="sal" id="" value="10000" disabled="disabled"><br>
+    생일<input type="date" name="birth" id="" value="1998-12-12" readonly="readonly"><br>
+    <input type="submit">
+  </form>
+</body>
+</html>

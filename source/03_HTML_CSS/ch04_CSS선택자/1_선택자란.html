@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css선택자?</title>
+  <style>
+    div { /*선택자 : html문서의 특정 부분을 선택해서 css속성을 변경하는 목적 */
+      background-color: #FFD800;
+      border: 5px solid red;
+    }
+    h1#id1 {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="id1">제목1</h1>
+  <p>본문 p</p>
+  <div>
+    <h1>div밑에 h1태그</h1>
+    <p>div밑에 p태그</p>
+  </div>
+  <div>여기도 div</div>
+</body>
+</html>

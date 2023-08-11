@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID 선택자</title>
+  <style>
+    div {
+      border: 1px solid gray;
+      text-align: center;
+    }
+    #header { /*id선택자는 #*/
+      background-color: yellow;
+      width: 600px;
+      margin: 0 auto;
+      text-decoration: underline;
+    }
+
+    #wrap {
+      background-color: skyblue;
+      width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      
+    }
+    #wrap #content {
+      float: left;
+      width: 350px;
+      height: 250px;
+    }
+   /* #wap #content .odd {} */
+    #wrap #content .menu1, #wrap #content .menu3 {
+      font-size: 1.5em;
+    }
+    #wrap #content .menu2 {
+      font-weight: bold;
+    }
+
+    #wrap #side_banner {
+      float: left;
+      width: 246px;
+      height: 250px;
+    }
+    #side_banner a img {
+      width: 200px;
+      background-color: white;
+      border: 1px solid black;
+
+    }
+    #footer {
+      background-color: yellow;
+      width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>HEADER</h1>
+  </div>
+  <div id="wrap">
+    <div id="content">
+      <h3>content</h3>
+      <ul>
+        <li class="menu1 odd">menu1</li>
+        <li class="menu2">menu2</li>  
+        <li class="menu3 odd">menu3</li>  
+        <li class="menu2">menu4</li>
+        <li class="menu1 odd">menu5</li>
+      </ul>
+    </div>
+    <div id="side_banner">
+      <h3>BANNER</h3>
+      <a href="http://www.daum.net">
+        <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="로고">
+      </a>
+    </div>
+  </div>
+  <div id="footer">
+    <h1>FOOTER</h1>
+  </div>
+</body>
+</html>
