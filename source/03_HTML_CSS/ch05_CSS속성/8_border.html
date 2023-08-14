@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+    }
+    div:nth-child(1) {
+      border-width: 2px;
+      border-top-width: 5px;
+      border-style: dotted;
+      border-top-style: solid;
+      border-left-style: double;
+      border-right-style: dashed;
+      border-color: red;
+      border-top-color: green;
+    }
+    div:nth-child(2) {
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+    }
+  </style>
+</head>    
+<body>
+  <div>1111</div>
+  <div>2222</div>
+</body>
+</html>

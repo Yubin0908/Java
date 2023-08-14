@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자/링크/부정 선택자</title>
+  <style>
+    #wrap {
+      width: 750px;
+      margin: 0 auto;
+    }
+    #header {
+      border-bottom: 1px solid gray;
+      text-align: center;
+    }
+    #content {
+      text-align: justify;
+      padding: 0 10px;
+    }
+    #content p:nth-child(2)::first-line,
+    #content p:nth-child(3)::first-line {
+      color: blue;
+      font-size: 20px;
+      font-weight: bold;
+    }          
+    #content p:nth-child(2)::first-letter {
+      font-size: 2em;
+    }
+    #content p:nth-child(3)::first-letter {
+      font-size: 2em;
+    } 
+    #content ul {
+      margin: 30px 0;
+    }
+    #content ul li a::after {
+      content: ' - ' attr(href);
+    }
+    #content ul li a {
+      color: blue;
+      text-decoration: none;
+    }
+    #content ul li:not(.web) a {
+      background-color: yellow;
+    }
+
+    #footer ul {
+      border-top: 1px solid gray;
+      overflow: hidden;
+    }
+    #footer ul li {
+      float: left;
+      list-style: none;
+      padding: 15px 5px;
+    }
+    #footer ul li:first-child {
+      padding-top: 25px;
+    }
+  </style>
+</head>
+  <body>
+    <div id="wrap">
+    <div id="header">
+    <h1>제목이나 회사명</h1>
+    </div>
+
+    <div id="content">
+      <p>Lorem Ipsum</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    
+      <ul>
+        <li><a href="http://www.naver.com" target="_blank">네이버</a></li>
+        <li class="web"><a href="http://www.daum.net" target="_blank">다음</a></li>
+        <li><a href="http://www.yahoo.com" target="_blank">야후</a></li>
+        <li><a href="http://www.google.com" target="_blank">구글</a></li>
+      </ul>
+    </div>
+    <div id="footer">
+      <ul>
+        <li><img src="src/logo.png" alt=""></li>
+        <li><img src="src/address.png" alt=""></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+1. CSS 단위 : em, %, px
+2. url : background image, font 설정
+3. display : inline, block, inline-block, none
+4. visibility : display:none = 공간과 같이 사라짐/visibility:hidden = 객체만 사라지고 공간은 유지됨
+5. opacity : 투명도
+6. margin, padding  
+7. border

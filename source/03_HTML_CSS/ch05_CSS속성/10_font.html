@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-Font</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Single+Day&display=swap');
+
+    @font-face {
+      font-family: 'Nanum';
+      src: url(src/NanumDongHwaDdoBag.ttf);
+    }
+    
+    p:nth-child(1) {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    p:nth-child(2) {
+      font-family: 'Nanum';
+    }
+    p:nth-child(3) {
+      font-family: 'Nanum Brush Script', cursive;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    p:nth-child(4) {
+      font-family: 'Single Day', cursive;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Kranklin gothic font(System font)
+  </p>
+  <p>Local Font(Download Font)</p>
+  <p>wep Font 1</p>
+  <p>wep Font 2</p>
+</body>
+</html>
