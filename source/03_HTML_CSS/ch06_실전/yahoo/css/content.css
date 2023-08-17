@@ -1,0 +1,77 @@
+/* content-end css file */
+
+/* content */
+#content {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+  overflow: hidden;
+}
+#content #main_menu {
+  width: 155px;
+  float: left;
+}
+/* main_menu */
+#main_menu {
+  width: 155px;
+  float: left;
+}
+#main_menu ul li {
+  list-style: none;
+  height: 50px;
+}
+#main_menu ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px 20px;
+}
+#main_menu ul li:hover a {
+  border-bottom: 1px solid #2d1152;
+  border-left: 1px solid #2d1152;
+}
+/* banner div */
+/* main_big_banner */
+.main_big_banner {
+  width: 600px;
+  height: 300px;
+  border: 1px solid gray;
+  float: left;
+  margin-bottom: 3px;
+}
+/* main_slide_banner */
+.main_slide_banner {
+  width: 600px;
+  height: 150px;
+  border: 1px solid gray;
+  float: left;
+}
+/* main div */
+#main {
+  width: 230px;
+  float: right;
+  margin-top: -302px;
+}
+.hit_search_word, .ad1, .ad2, .ad3, .ad4 {
+  border: 1px solid gray;
+  height: 100px;
+  margin-bottom: 3px;
+}
+/* lnb (서브메뉴) */
+#lnb {
+  width: 600px;
+  float: left;
+  margin-top: 6px;
+  margin-left: auto;
+}
+/* topic div */
+#topic {
+  float: left;
+  margin: 10px 0 10px 155px;
+  width: 600px;
+}
+.main_topic1, .main_topic2, .main_topic3, .main_topic4 {
+  border: 1px solid gray;
+  margin-bottom: 3px;
+  height: 100px;
+}

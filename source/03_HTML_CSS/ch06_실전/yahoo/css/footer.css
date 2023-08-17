@@ -1,0 +1,15 @@
+/* footer-end css */
+footer {
+  width: 1000px;
+  height: 100px;
+  border: 1px solid gray;
+  line-height: 100px;
+  margin: 0 auto;
+}
+footer ul li {
+  float: left;
+  list-style: none;
+}
+footer ul li img {
+  vertical-align: middle;
+}
