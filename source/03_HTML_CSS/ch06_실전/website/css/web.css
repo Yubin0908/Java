@@ -1,0 +1,131 @@
+/* layout reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* nav 영역 */
+#nav {
+  min-width: 800px;
+  height: 100px;
+  border-bottom: 1px solid gray;
+  overflow: hidden;
+  margin: 10px 0 0 10px;
+}
+/* nav > .logo */
+.nav_left ul > .logo {
+  background-color: #FDEADA;
+  padding: 5px 15px;
+  border: 1px solid gray;
+}
+.nav_left {
+  height: 20px;
+  float: left;
+}
+/* nav > left */
+
+.nav_left ul li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 40px;
+  padding-left: auto;
+}
+.nav_left ul li a {
+  text-decoration: none;
+  line-height: 30px;
+  color: black;
+}
+/* nav > right */
+
+.nav_right ul li {
+  float: right;
+  list-style: none;
+  padding-right: 40px;
+  padding-left: auto;
+
+}
+.nav_right ul li a {
+  text-decoration: none;
+  line-height: 40px;
+  color: black;
+}
+/* nav > p */
+#nav p {
+  margin-top: 25px;
+}
+/* content */
+#content {
+  height: 460px;
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* content > lnb */
+.lnb {
+  width: 200px;
+  margin-top: 5px;
+  float: left;
+
+}
+.lnb ul li {
+  list-style: none;
+  border: 1px solid gray;
+
+}
+.lnb ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 7px 0 7px 30px;
+}
+.lnb ul li:hover > a { /* lnb a태그 마우스 오비 시, 색상 */
+  background-color: #FDEADA;
+}
+.lnb ul > .color { /* 개인정보변경 a태그 색상설정 */
+  background-color: #FDEADA;
+}
+/* content > my_content */
+.my_content {
+  width: 760px;
+  height: 450px;
+  float: right;
+  border: 1px solid gray;
+  margin-top: 5px;
+}
+.my_content .sub_title {
+  border-bottom: 1px solid gray;
+}
+.my_content .sub_title p {
+  margin: 5px 5px;
+}
+.my_content th{
+  display: block;
+  position: absolute;
+  margin: 102px 100px;
+}
+.my_content td {
+  display: block;
+  position: relative;
+  top: 102px;
+  left: 250px;
+}
+.btn input{
+  width: 50px;
+  margin: 150px 300px;
+}
+.modify th, td {
+  margin-bottom: 7px;
+}
+.modify td input {
+  width: 300px;
+  height: 20px;
+}
+/* footer 영역  */
+footer {
+  background-color: #FDEADA;
+  height: 50px;
+  border: 1px solid gray;
+  margin: 5px;
+  columns: black;
+  text-align: center;
+  line-height: 50px;
+}

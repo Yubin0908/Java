@@ -3,14 +3,14 @@
   padding: 0;
 }
 /* 틀 */
-#container { 
+#container {
   width: 800px;
   margin-left: 30%;
   text-align: center;
   border: 1px solid gray;
   position: absolute;
   z-index: 1;
-
+  
 }
 
 #back {
@@ -21,7 +21,7 @@
 #back img {
   opacity: 0.3;
   width: 801px;
-  height: 667px;
+  height: 685px;
   z-index: -9;
 }
 /* 헤더 영역 */
@@ -35,44 +35,47 @@
 /* 네비게이션 영역 */
 #nav {
   border: 1px solid gray;
-  height: 80px;
+  height: 100px;
   width: 790px;
   margin: 5px
-  
 }
 
 #nav p {
   margin-bottom: 5px;
-  
+  height: 40px;
+  line-height: 40px;
 }
 
 #nav ul {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: inline-block;
+  margin: 0 auto;
 }
-#nav ul li {
+#nav ul > li {
   float: left;
   width: 120px;
   list-style-type: none;
   text-align: center;
   border: 1px solid pink;
   margin: 2px;
-  padding: 10px;
+  padding: 5px;
   font-weight: bold;
   font-size: 1.2em;
   background-color: pink;
+  height: 30px;
 }
 
-#nav ul li a {
+#nav ul > li > a {
   text-decoration: none;
   color:purple;
+  display: block;
 }
 
-#nav ul li:first-child {
+#nav ul > li:first-child {
   border-radius: 20px 0 0 20px;
 }
 
-#nav ul li:last-child {
+#nav ul > li:last-child {
   border-radius: 0 20px 20px 0;
 }
 
@@ -97,11 +100,28 @@
   height: 350px;
 }
 
-/* footer 영역 */ 
+/* footer 영역 */
 #footer {
   border: 1px solid gray;
   margin: 5px;
   height: 100px;
   line-height: 100px;
   background-color: yellow;
+}
+
+/* 서브 메뉴 영역 */
+#nav {
+  position: relative;
+  z-index: 99;
+}
+
+#nav ul > li .submenu {
+  font-size: 16px;
+  background-color: white;
+  border-radius: 0;
+  display: none;
+}
+
+#nav ul > li:hover > .submenu {
+  display: block;
 }
