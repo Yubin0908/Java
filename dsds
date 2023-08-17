@@ -1,0 +1,46 @@
+[33m9b9a3a5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to 9b9a3a5
+[33md4d6158[m HEAD@{1}: commit: er:
+[33mc0f8484[m HEAD@{2}: reset: moving to HEAD~4
+[33md1171da[m HEAD@{3}: commit: reset
+[33m2beb7e6[m HEAD@{4}: reset: moving to HEAD~2
+[33m446400d[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{5}: commit: 화면설계
+[33m9b9a3a5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{6}: commit: CSS 속성
+[33m2beb7e6[m HEAD@{7}: commit: html - css선택자
+[33m371f7c5[m HEAD@{8}: commit: html2_form_div
+[33mbdfdfb1[m HEAD@{9}: commit: html
+[33mc0f8484[m HEAD@{10}: checkout: moving from master to master
+[33mc0f8484[m HEAD@{11}: commit: sql_lastex
+[33m8e17b2d[m HEAD@{12}: commit: jdbc_2
+[33m5659c4f[m HEAD@{13}: commit: jdbc
+[33m4b8b9b2[m HEAD@{14}: commit: mysql
+[33m1463900[m HEAD@{15}: commit: repos
+[33m90e4b70[m HEAD@{16}: commit: sql DDL_DCL_DML
+[33m8df47f0[m HEAD@{17}: commit: sql_ddl_dml
+[33m68b789d[m HEAD@{18}: commit: sql_내장함수
+[33m25796ca[m HEAD@{19}: commit: sql_Join
+[33m18d35f9[m HEAD@{20}: commit: oracle
+[33mcf169bd[m HEAD@{21}: commit: sql_1
+[33m5f25c8b[m HEAD@{22}: commit: I/O
+[33ma7f3f78[m HEAD@{23}: commit: I/O
+[33m62c509d[m HEAD@{24}: commit: collection
+[33m0ed040a[m HEAD@{25}: commit: 0714 Exception-Collection
+[33md52645b[m HEAD@{26}: commit: 0713
+[33m2b396b5[m HEAD@{27}: commit: class2-2
+[33m9a2fe64[m HEAD@{28}: commit: class2
+[33mec79af8[m HEAD@{29}: commit: 0703 Class01
+[33mf3824ef[m HEAD@{30}: commit: method 2
+[33ma92f772[m HEAD@{31}: commit: method
+[33md7de94f[m HEAD@{32}: commit: array
+[33m74c7157[m HEAD@{33}: commit: 0629 update
+[33m09c163f[m HEAD@{34}: commit: 0628 21:29 commit(final)
+[33mb8d3a0a[m HEAD@{35}: commit: 0928 15:03 second_commit
+[33m353e028[m HEAD@{36}: commit: 0928 12:49 re-ply
+[33m9a0518f[m HEAD@{37}: commit: 0628 vscode "dir repositories re-up"
+[33m25022ed[m HEAD@{38}: commit: 0628 vscode first commit
+[33m258eb2c[m HEAD@{39}: commit: vscode_commit 23:09 yubin
+[33mbf693d4[m HEAD@{40}: commit: 0627 22:32:00
+[33m84c4173[m HEAD@{41}: pull --tags origin master: Merge made by the 'ort' strategy.
+[33m89e582a[m HEAD@{42}: commit: vscode_all_commit
+[33m4794ec0[m HEAD@{43}: commit: second
+[33m797cb5a[m HEAD@{44}: Branch: renamed refs/heads/master to refs/heads/master
+[33m797cb5a[m HEAD@{46}: commit (initial): first commit

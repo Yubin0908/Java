@@ -1,0 +1,107 @@
+/* page reset */
+@font-face {
+  font-family: 'Amarante-R';
+  src: url(../font/Amarante-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Amarante-R';
+}
+
+/* header_nav > gnb */
+#header_nav {
+  overflow: hidden;
+  position: relative;
+  min-width: 905px; /* 최소 축소사이즈 905px */
+  max-width: 1500px;
+}
+#header_nav .gnb {
+  background-color: #2d1152;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+#header_nav .gnb ul li { 
+  float: left;
+  list-style: none;
+  line-height: 125%;
+  margin: 0 10px;
+}
+#header_nav .gnb ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+/* survivalFootball */
+.survivalFootball {
+  float: right;
+  position: relative;
+  line-height: 125%;
+  margin: 0 10px;
+}
+.survivalFootball a {
+  color: whitesmoke;
+  text-decoration: none;
+  padding-left: 18px;
+}
+.survivalFootball .football {
+  background: url(../src/survivalFootball.png) no-repeat;
+  background-size: 15px;
+}
+/* header_info */
+#header_info {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 905px;
+  width: 1500px;
+}
+/* header_info > logo */
+#header_info .logo {
+  margin-top: 10px;
+  float: left;
+  margin-left: 120px;
+}
+/* header_info > serarch */
+/* search form box */
+.search input[type="text"] {
+  width: 250px;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  border: 1px solid #3488d9;
+}
+#header_info input[type="text"]:focus {
+  outline: 1px solid #3488d9;
+}
+/* search_btn */
+input[type="submit"] {
+  border: none;
+  background: url(../src/search_btn.png) no-repeat;
+  width: 90px;
+  height: 35px;
+  border-radius: 10px 10px;
+  font-size: .7em;
+  color: white;
+  float: left;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+/* header_info > .service */
+.service {
+  overflow: hidden;
+}
+.service ul li {
+  list-style: none;
+  margin-right: 560px;
+  margin-top: 27px;
+}
+.service ul li a {
+  text-decoration: none;
+  float: right;
+  padding-left: 25px;
+  color: #2d1152;
+
+}
+
