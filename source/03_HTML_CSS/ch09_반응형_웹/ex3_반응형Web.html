@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, userble-scale=yes">
+  <title>Document</title>
+  <style>
+    /* page reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: block;
+    }
+    /* 공통부분 */
+    #wrap {
+      border: 1px solid gray;
+      box-sizing: border-box;
+      text-align: justify;
+    }
+    #header {
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      border: 1px solid gray;
+      box-sizing: border-box;
+    }
+    #nav {
+      overflow: hidden;
+    }
+    #nav ul li {
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid gray;
+      box-sizing: border-box;
+    }
+    #content {
+      padding: 10px;
+    }
+    #footer {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    /*  background-color: gray; */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,c8eefb+54,bee4f8+77,bee4f8+89,b1d8f5+100 */
+background: #e1ffff; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 77%, #bee4f8 89%, #b1d8f5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 77%,#bee4f8 89%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 77%,#bee4f8 89%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    }
+    /* Mobile screen */
+    @media screen and (max-width:959px) {
+      #wrap {
+        width: 100%;
+        background-color: lightpink;
+        font-size: 1.3em;
+      }
+      #nav ul li {
+        width: 33.33%;
+      }
+      #nav ul li:nth-child(4),
+      #nav ul li:nth-child(2) {
+        display: none;
+      }
+    }
+    /* tablet screen */
+    @media screen and (min-width:960px) and (max-width: 1200px) {
+      #wrap {
+        width: 99%;
+        background-color: lightgreen;
+        font-size: 1.1em;
+        margin: 0.5%;
+      }
+      #nav ul li {
+        width: 25%;
+      }
+      #nav ul li:last-child {
+        display: none;
+      }
+    }
+    /* desktop screen */
+    @media screen and (min-width:1201px) {
+      #wrap {
+        width: 800px;
+        margin: 3px auto;
+      }
+      #nav ul li {
+        width: 20%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <h1>반응형 웹</h1>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <h3>Lorem Ipsum</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae tempus ante, quis posuere metus. In at lorem a justo finibus tempus quis lacinia leo. Proin egestas nulla nec nisi faucibus, et sollicitudin tortor egestas. Phasellus malesuada blandit dui, sit amet sodales nibh luctus vitae. Pellentesque sit amet sapien vel massa malesuada varius nec sed mauris. Vivamus congue est nec tortor tempor pharetra. Pellentesque quis faucibus ex, vitae porta massa. Ut sodales metus a ligula malesuada, non facilisis lorem tristique. Aenean tincidunt tincidunt pulvinar. Duis eu est convallis, varius est in, porttitor libero. Maecenas a nibh congue neque cursus pretium.</p> 
+
+    </div>
+    <div id="footer">
+      홍길동 주식회사
+    </div>
+  </div>
+</body>
+</html>
