@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    
+    img {
+      width: 1000px;
+    }
+  </style>
+  <script>
+  //  const date = new date(); // 현재 시점
+  //  const hour = date.getHours(); // 0~23시 사이
+    const hours = new Date().getHours();
+
+    if(hours < 12) {
+      document.write('상쾌한 오전입니다.<br>');
+      document.write('<img src="src/am.jpg" alt="am사진"');
+    } else {
+      document.write('후덥지근한 오후입니다.<br>');
+      document.write('<img src="https://t1.daumcdn.net/cfile/tistory/99C1C2335D7F101B3A" alt="pm사진"');
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+
+      do {
+        kor = prompt('국어점수를 입력하세요.', '0~100');
+        eng = prompt('영어점수를 입력하세요.', '0~100');
+          if( !kor || !eng ) {
+            alert('정수로 입력하세요.')
+          } else {
+
+            let in_kor = parseInt(kor);
+            let in_eng = parseInt(eng);
+
+            if(isNaN(in_kor) || isNaN(in_eng)) {
+              alert('정수를 입력하세요.');
+            } else {
+              document.write('국어점수 : ' + in_kor + '<br>');
+              document.write('영어점수 : ' + in_eng + '<br>');
+              total = (in_kor + in_eng) / 2;
+              document.write('평균점수 : ' + total);
+              break;
+            }
+          }
+    }while(true);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

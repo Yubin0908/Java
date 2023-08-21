@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // false로 간주되는 값 : ubdefined, 0, NaN, '', Null
+    var i;
+    document.write(Boolean(i) + '<br>');
+    document.write(Boolean(0) + '<br>');
+    document.write(Boolean(Number('a')) + '<br>');
+    document.write(Boolean(NaN) + '<br>');
+    document.write(Boolean('') + '<br>');
+    document.write(Boolean(null) + '<br>');
+    document.write('==false의 결과 ' + ( 0 == false) + '<br>' );
+    document.write('===false의 결과 ' + ( 0 === false) + '<br>' );
+  </script>
+</head>
+<body>
+
+</body>
+</html>

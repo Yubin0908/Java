@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // 자료형 : undefined, number, string, boolean, function, object(array)
+    var variable;
+    document.write('1. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+    variable = 20000000000000000;
+    document.write('2. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+    variable = '이름은 "홍길동"입니다';
+    document.write('3. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+    variable = false;
+    document.write('4. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+    variable = function () {
+      alert('함수 속');
+    };
+    document.write('5. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+   // variable(); // 함수 호출
+    variable = {'name':'홍길동', 'age':20};
+    document.write('6. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+    document.write(variable.name + "/" + variable.age + "<br>");
+    variable = [1,2,3];
+    document.write('7. variable의 변수타입 : ' + typeof(variable) + " 값 : " + variable + '<br>');
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
