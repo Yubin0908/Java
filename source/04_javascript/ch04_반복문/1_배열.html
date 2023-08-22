@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    person = {'name':'홍길동', 'age':20}; // 객체
+    arr = [273, 'hello', true, function(){alert(1);}, person, [1,2,3]]; //배열
+    document.write('원래 배열방의 개수 : ' + arr.length + '<br>');
+    document.write(3 + ' : ' + arr[3] + '<br>');
+    if(confirm('배열방에 데이터 추가할까요?')) {
+      data = prompt('배열방에 넣을 데이터는 ? ');
+      arr.push(data);
+      document.write('추가 후 배열방의 개수 : ' + arr.length + '<br>');
+      document.write('추가된 마지막방 데이터 : ' + arr[arr.length-1]);
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

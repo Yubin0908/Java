@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+//    let i = Number(prompt('i의 j승을 구하려는데 i값 은 : '));
+  //  let j = Number(prompt('i의 j승을 구하려는데 j값 은 : '));
+    //document.write(pow(i, j) + '<br>');
+    document.write('pow(2,3) = ' + pow(2,3) + '<br>');
+    document.write('pow(2,2,2) = ' + pow(2,2,2) + '<br>'); // 선언된 매개변수보다 많으면 뒷부분 무시
+    document.write('pow(2) = ' + pow(2) + '<br>'); // 선언된 매개변수보다 적으면 undefined
+
+    let r = pow(3,2);
+    document.write('r = ' + r);
+    
+    function pow(x, y) {//x의 y승을 return하는 함수
+      let result = 1;
+      for(let cnt=1; cnt<=y; cnt++) {
+        result *= x; // resylt = result*y
+      }
+      return result;
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>

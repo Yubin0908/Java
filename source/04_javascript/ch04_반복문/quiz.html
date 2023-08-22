@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    let input = 0;
+    let total = 0;
+    let success = 0;
+    let fail = 0;
+
+    while(confirm('누적할래?')) {
+      data = prompt('누적할 점수 ? (0~100)');
+      var num = parseInt(data);
+      input++; // 입력횟수 카운트
+      if(isNaN(num) || num < 0 || num > 100) {
+        alert('잘못 입력');
+        fail++; // 잘못입력 카운트
+      } else {
+        total += num; // 누적점수 sum
+        success++; // 정상입력 카운트
+      }
+    }
+    document.write(input + '번 입력 ' + '<br>');
+    document.write('누적점수 : ' + total + '<br>');
+    document.write('점수를 제대로 입력한 횟수 : ' + success + '<br>');
+    document.write('점수를 잘못 입력한 횟수 : ' + fail + '<br>');
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

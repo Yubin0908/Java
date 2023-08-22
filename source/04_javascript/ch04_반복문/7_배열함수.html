@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // forEach(반복), push(배열추가), pop(배열삭제), slice(배열추출), splice(배열추출)
+    let arr = ['가', '나', '다', '라', '마', '바'];
+    // slice는 배열의 원본은 바꾸지 않고 새로운 배열을 반환
+    let sliceArr = arr.slice(2,5); // 2~5번쨰 앞까지
+    document.write('원본 arr : ' + arr + '<br>');
+    document.write('sliceArr : ' + sliceArr + '<br>');
+    // splice는 n번째 부터 m개 제거
+    arr.splice(3,2);
+    document.write('원본 arr : ' + arr);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
