@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    /* 자바에서의 기본자료형과 객체자료형
+      Integer iObj = new Integer(10);
+      iObj.toString(); 가능
+      int i = 10;
+      i.toString(); 불가능
+    */
+    // js에서의 기본데이터타입(number, string. boolean) vs 객체데이터타입
+    let priNum = 273; // 기본 데이터 타입
+    let objNum = new Number(273); // 객체 데이터 타입
+    document.write('priNum type = ' + typeof(priNum) + '<br>'); // number
+    document.write('objNum type ='+ typeof(objNum) + '<br>'); // object
+
+    // 생성자 함수(constructor)
+    document.write('proNum constructor가 Number ? ' + (priNum.constructor==Number) + '<br>'); // true
+    document.write('objNum constructor가 Number ? '+ (objNum.constructor==Number) + '<br>'); // true
+
+    if(priNum.constructor==objNum.constructor) { // true
+      document.write('priNum와 objNum의 저장된 객체타입은 같다.<br>');
+    } else {
+      document.write('priNum와 objNum의 저장된 객체타입은 다르다.<br>');
+    }
+    // 지수형 표현(273) - 소수점 2자리
+    document.write(priNum.toExponential(2) + '<br>');
+    document.write(objNum.toExponential(2) + '<br>');
+
+    // (1) 내장된 생성자함수(Number)의 prototype에 method 추가
+    Number.prototype.method1 = function() {
+      document.write('Number타입이면 다 호출가능 <br>');
+    }
+    // prototype method 호출
+    priNum.method1();
+    objNum.method1();
+
+    // (2) objNum 객체에 method 추가
+    objNum.method2 = function() {
+      document.write('objNum에 method 추가(priNum 사용 불가) <br>');
+    };
+    // method2 method 호출
+    //priNum.method2(); // 에러
+    objNum.method2();
+
+    // (3) priNum에는 method 추가 불가
+    priNum.method3 = function() {
+      document.write('error? <br>');
+    };
+
+    priNum.method3();
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

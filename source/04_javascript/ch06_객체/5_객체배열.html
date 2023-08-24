@@ -3,21 +3,80 @@
   <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="4_replaceAll.js"></script>
   <script>
-    
-    let students = [{ 'name' : '김', 'kor':99, 'mat':99, 'eng':97, 'sci':99},
-                    { 'name' : '김', 'kor':90, 'mat':91, 'eng':97, 'sci':99}];
-    students.push({ 'name' : '이', 'kor':87, 'mat':91, 'eng':99, 'sci':88});
-    students.push({ 'name' : '장', 'kor':99, 'mat':99, 'eng':99, 'sci':99});
-    students.push({ 'name' : '윤', 'kor':87, 'mat':99, 'eng':90, 'sci':81});
+    let students = [
+      { 'name': '김', 'kor': 99, 'mat': 99, 'eng': 97, 'sci': 99 },
+      { 'name': '박', 'kor': 90, 'mat': 91, 'eng': 97, 'sci': 99 }
+    ];
 
-    for (var idx in students) {
+    students.push({ 'name': '이', 'kor': 87, 'mat': 91, 'eng': 99, 'sci': 88 });
+    students.push({ 'name': '장', 'kor': 99, 'mat': 99, 'eng': 99, 'sci': 99 });
+    students.push({ 'name': '윤', 'kor': 87, 'mat': 99, 'eng': 90, 'sci': 81 });
+
+    for (let idx in students) {
       students[idx].getsum = function () {
         return this.kor + this.mat + this.eng + this.sci;
-    };
-  };
-  document.write(students[3].name + ' / ' +students[3].getsum());
-  </script>
+      };
+      students[idx].getAvg = function () {
+        return this.getsum() / 4; // 소수점 유지됨.
+      };
+      students[idx].toString = function () {
+        let output = '';
+        for (let key in this) {
+          if (key != 'getsum' && key != 'getAvg' && key != 'toString') {
+            output += key + ':' + this[key] + ' ';
+          } else if (key == 'getsum') {
+            output += key.substring(3) + ':' + this[key]() + ' ';
+          } else if (key == 'getAvg') {
+            output += key.substring(3) + ':' + this[key]() + '<br>';
+          }
+        }
+        return output;
+      };
+    }
+  
+  // 1. 일반 for문
+  document.write('일반 for 문 이용<br>');
+  var out = '';
+  for(let idx=0; idx<students.length; idx++) {
+    out += idx + '번째 : ';
+    out += students[idx].toString();
+  }
+  document.write(out);
+
+  // 1-1. replaceAll 함수 사용(alert 출력)
+  //alert(replaceAll(out.toString(), '<br>', '\n'));
+  //alert(out.toString().replaceAll('<br>', '\n'));
+  document.write('<hr>');
+  // 2. for-in문
+  document.write('for - in 문 이용<br>');
+  for(var idx in students) {
+    document.write(idx + '번째 : ' + students[idx]);
+  }
+  document.write('<hr>');
+
+  // 3. for-of문 : idx 미포함 (idx 필요없을때 이용가능)
+  document.write('for - of 문 이용<br>');
+  for(var s of students) {
+    document.write(s);
+  }
+  document.write('<hr>');
+
+  // 4. forEach() : idx 포함
+  document.write('forEach() 함수(idx 포함)<br>');
+  students.forEach(function(data, idx) {
+    document.write(idx + '번째' + data);
+  });
+  document.write('<hr>');
+
+  // 5. forEach() : idx 미포함
+  document.write('forEach() 함수(idx 미포함)<br>');
+  students.forEach(function(data) {
+    document.write(data);
+  });
+  document.write('<hr>');
+</script>
 </head>
 <body>
 
