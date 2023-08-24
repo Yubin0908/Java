@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    
+    let students = [{ 'name' : '김', 'kor':99, 'mat':99, 'eng':97, 'sci':99},
+                    { 'name' : '김', 'kor':90, 'mat':91, 'eng':97, 'sci':99}];
+    students.push({ 'name' : '이', 'kor':87, 'mat':91, 'eng':99, 'sci':88});
+    students.push({ 'name' : '장', 'kor':99, 'mat':99, 'eng':99, 'sci':99});
+    students.push({ 'name' : '윤', 'kor':87, 'mat':99, 'eng':90, 'sci':81});
+
+    for (var idx in students) {
+      students[idx].getsum = function () {
+        return this.kor + this.mat + this.eng + this.sci;
+    };
+  };
+  document.write(students[3].name + ' / ' +students[3].getsum());
+  </script>
+</head>
+<body>
+
+</body>
+</html>

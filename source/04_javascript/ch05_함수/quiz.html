@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      background-size: 100%;
+    }
+  </style>
+  <script>
+    let img = ['url(img/img01.png)', 'url(img/img02.png)', 'url(img/img03.png)'];
+    let col = ['#ffff00', '#ff00ff', '#000000'];
+    var count = 0; // count 변수를 0으로 초기화
+    
+    var id = setInterval(function() {
+      document.body.innerHTML = new Date() + '<br>'; // Time 출력
+      count++;  // 카운트 누적
+      document.body.style.backgroundImage = img[count % 3]; // image 변경
+      document.body.style.color = col[count % 3]; // font-color 변경
+    }, 1000);
+
+    setTimeout(function() { //Interval 종료기능
+      clearInterval(id);
+    },10000);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

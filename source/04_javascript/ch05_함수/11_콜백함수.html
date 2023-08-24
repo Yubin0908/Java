@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function callTenTimes(callback) {
+      for(i=0; i<10; i++) {
+        callback(); // 콜백함수(매개변수로 들어온 함수)
+      }
+    }
+
+/*   var funVar = function() {
+      document.write(new Date() + '<br>');
+    }
+    callTenTimes(funVar); */
+    callTenTimes(function() {
+      document.write(new Date() + '<br>');
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

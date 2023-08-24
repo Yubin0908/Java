@@ -2,5 +2,6 @@
   "commentTranslate.hover.enabled": true,
   "compile-hero.disable-compile-files-on-did-save-code": false,
   "commentTranslate.targetLanguage": "ko",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "commentTranslate.multiLineMerge": false
 }

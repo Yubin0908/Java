@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+   /* for(var i=0; i<3; i++) { // 출력 : 3 // 3 // 3
+      setTimeout(() =>{
+        alert(i);
+      },0);
+    } */
+
+/*    for(let i=0; i<3; i++) { // 출력 : 0 // 1 // 2
+     setTimeout(() =>{
+        alert(i);
+      },0);
+    } */
+    [0,1,2].forEach(function(data, idx) {
+      setTimeout(() => {
+        alert(data);
+      },0);
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

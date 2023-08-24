@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="4_replaceAll.js"></script>
+  <script>
+    const person = {
+      name:'홍길동',
+      age:20,
+      eat:function(food) {
+        const msg = this.age + '살 ' + this.name + '님은 ' + food + '를 먹습니다.';
+        alert(msg);
+      },
+      toString : function() {
+        let output = '';
+        for(let key in this) {
+          if(key!='eat' && key!='toString') {
+            output += key + ':' + this[key] + '\n';
+          }
+        }
+        return output;
+      },
+    };
+    
+    alert(person);
+    person.address = '서울 서대문';
+    person.hobby ='개발 하기';
+    alert('속성 추가후 \n' + person);
+    document.write(person.toString().replaceAll('\n', '<br>'));
+    document.write(replaceAll(person.toString(), '\n', '<br>'))
+    document.writeln(person.toString());
+  
+
+    // for-in문을 이용하여 출력할 string생성
+    /*   var output = '';
+    for(var key in person) {
+      if(key != 'eat') {
+        output += key + ':' + person[key] + '<br>';
+      }
+    }
+    document.write(output); */
+  </script>
+</head>
+<body>
+
+</body>
+</html>
