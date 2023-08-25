@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // open(opts1, opts2, opts3);
+    // opts1 : 열릴 새창의 url(생략 시 빈창 출력)
+    // opts2 : 새창의 name
+    // opts3 : 새창의 width(필수), height(필수), left, top, location(주소창 유무)
+    var child = open('2_window의 onload.html', '', 'width=600,height=500,left=100,top=100');
+
+    if (child) {
+    } else {
+      alert('팝업 차단을 해제하셔야 새창이 열립니다.');
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

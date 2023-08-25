@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    // 방법 1
+  /*  function openWin() {
+      
+    }; */
+    // 방법 2
+    const openWin = function() {
+      let child = open('','childWin','width=700,height=400');
+    };
+
+    if (child) {
+      alert('팝업 차단 혜제 요망');
+    };
+  </script>
+</head>
+<body>
+  <button onclick="openWin()">새창열기</button><br>
+  <a href="http://naver.com" target="childWin">네이버</a>
+  
+</body>
+</html>

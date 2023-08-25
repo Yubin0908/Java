@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function Student(name, kor, mat) {
+      this.name = name;
+      this.kor = kor;
+      this.mat = mat;
+    };
+    
+    Student.prototype.getSum = function() {
+      return this.kor + this.mat;
+    }
+    
+    Student.prototype.getAvg = function() {
+      return this.getSum() / 2;
+    }
+    
+    Student.prototype.toString = function() {
+      return this.name + ' ' + this.kor + ' ' + this.mat + ' ' + this.getSum() + ' ' + this.getAvg() + ' ' + '<br>';
+    }
+    
+    let students = [
+      new Student('홍길동', 80, 90),
+      new Student('김길동', 99, 71),
+      new Student('신길동', 19, 23),
+      new Student('윤길동', 56, 78),
+      new Student('마길동', 100, 65),
+    ];
+    
+    students.forEach(function(data, idx) {
+      document.write(idx + ' : ' + data.toString());
+    });
+    
+  </script>
+</head>
+<body>
+
+</body>
+</html>

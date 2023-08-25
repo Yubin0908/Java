@@ -27,6 +27,32 @@
         ex2. 이메일 \w+@\w+(\.\w+){1,2}
         ex3. 주민번호 [0-9]{6}-[1-4][0-9]{6}
         ex4. ip주소 */
+  </script>
+  <script>
+    var str = 'abc$abcd가';
+    // 패턴
+    var patternNum = /[0-9]/; // 숫자패턴
+    var patternEngUp = /[A-Z]/; // 대문자패턴
+    var patternEngLo = /[a-z]/; // 소문자패턴
+    var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; // 한글 패턴
+    // 특수문자 패턴
+    var patternSpecial = /[~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+
+    // 숫자, 영어, 한글, 특수문자가 포함된 문자열인지 검사
+    document.write('str에 숫자포함 여부 : ' + patternNum.test(str) + '<br>');
+    document.write('str에 대문자포함 여부 : ' + patternEngUp.test(str) + '<br>');
+    document.write('str에 소문자포함 여부 : ' + patternEngLo.test(str) + '<br>');
+    document.write('str에 한글포함 여부 :'+ patternKor.test(str) + '<br>');
+    document.write('str에 특수문자포함 여부 :'+ patternSpecial.test(str) + '<br>');
+
+    var email1 = 'hong@hong.co.kr';
+    var email2 = 'hong@hong';
+    var patternEmail = /^\w+@\w+(\.\w+){1,2}$/;
+    //str.match(정규표현식) : 정규표현식 패턴과 일치하지 않을 경우, null return // 일치하면 str return
+    document.write('email1 : '+ email1.match(patternEmail) + '<br>');
+    document.write('email1 : '+ email2.match(patternEmail) + '<br>'); // null = false
+
+    
 
   </script>
 </head>

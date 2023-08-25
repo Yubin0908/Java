@@ -1,0 +1,14 @@
+[기본객체]
+Number : 숫자 객체
+String : 문자열을 다루기 위한 객체
+Array : 배열을 만들어 주는 객체
+Date : 날짜와 시간을 처리하기 위한 객체
+Math : 수학 계산을 위한 객체
+
+ - object 객체 : 자바 스크립트의 최상위 객체
+[생성 방법]
+var object = {};
+var object = new Object();
+
+ - 자료형 구분
+자료형을 검사할 때는 typeof 연산자를 사용.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    var cnt = 0;
+    for (let key in window) { // 일반함수처럼 사용해오던 alert, confirm은 window 객체안의 속성이다.
+      document.write(++cnt + key + ' : ' + window[key] + '<br>');
+    }
+    document.write('<hr>');
+    window.onload = function() { // on~~ : 이벤트 속성 변수
+      alert('윈도우가 로드됨' + '<br>');
+    };
+    var fun = function() { // 일반함수
+      for (let key in window) {
+        if (key == 'onload') {
+          document.write(key + ' : ' + window[key]);
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>
