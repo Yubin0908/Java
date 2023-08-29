@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title>INDEX</title>
+  <script>
+    window.onload = function() {
+    // 방법 1 : 1.h1생성 2.text node 생성 3.text node를 h1에 연결(추가) 4.h1을 body에 추가
+    var h1 = document.createElement('h1'); // 1.h1생성
+    var textNode = document.createTextNode('추가한 h1태그안의 text'); // 2.text node 생성
+    h1.appendChild(textNode); // 3.text node를 h1에 연결(추가)
+    document.body.appendChild(h1); // 4.h1을 body에 추가
+
+    // 방법 2 : 1.img 태그 생성 2.src속성 변경 3.img를 body에 추가
+    var img = document.createElement('img'); // 1.img 태그 생성
+    img.setAttribute('src', 'src/red.jpg'); // 2.img src 속성 변경
+    img.setAttribute('alt', '체리'); // 2.img alt 속성 변경
+    document.body.appendChild(img); // 3.img를 body에 추가
+    };
+    // 방법 3 : InnerHTML을 이용
+    document.body.innerHTML = '<h2> 방법 3으로 추가</h3>';
+    
+  </script>
+</head>
+<body>
+  <h1>TEXT NODE</h1>
+  <img src="src/orange.jpg" alt="orange">
+</body>
+</html>

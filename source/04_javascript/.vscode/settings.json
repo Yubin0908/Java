@@ -3,5 +3,6 @@
   "compile-hero.disable-compile-files-on-did-save-code": false,
   "commentTranslate.targetLanguage": "ko",
   "git.ignoreLimitWarning": true,
-  "commentTranslate.multiLineMerge": false
+  "commentTranslate.multiLineMerge": false,
+  "liveServer.settings.port": 5501
 }

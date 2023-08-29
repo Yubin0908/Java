@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    mousedown = () => {
+      img = document.getElementsByTagName('img')[0];
+      img.setAttribute('src', 'img/but2.gif');
+    };
+    mouseup = () => {
+      img = document.getElementsByTagName('img')[0];
+      img.setAttribute('src','img/but1.gif');
+    };
+    mousedown
+  </script>
+  <style>
+    #wrap {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <img src="img/but1.gif" alt="안누른 상태" onmouseup="mouseup()" onmousedown="mousedown()">
+  </div>
+</body>
+</html>

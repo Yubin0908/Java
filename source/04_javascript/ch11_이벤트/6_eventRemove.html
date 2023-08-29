@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    var cnt=0;
+    window.onload = () => {
+      document.getElementsByTagName('h1')[0].onclick = function() {
+        cnt++;
+        this.innerHTML += '<span>♡</span>';
+        if(cnt >=7) { // click이벤트는 7번 가능하도록 설정 : 초과 시 이벤트 제거
+          this.onclick = null;
+        };
+      };
+
+    };
+  </script>
+  <style>
+    h1 {
+      cursor: pointer;
+    }
+    h1::selection, span::selection {
+      background-color: white !important;
+    }
+    span:nth-child(1) {color: red;}
+    span:nth-child(2) {color: orange;}
+    span:nth-child(3) {color: yellow;}
+    span:nth-child(4) {color: green;}
+    span:nth-child(5) {color: blue;}
+    span:nth-child(6) {color: navy;}
+    span:nth-child(7) {color: purple;}
+  </style>
+</head>
+<body>
+  <h1>좋아요 <!--<span>♡</span>--> </h1>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    window.onload = function() {
+      h1 = document.querySelector('h1');
+      h1.addEventListener('click', () => {
+        alert('Click했네');
+      });
+    };
+  </script>
+  <style>
+    h1 {
+      cursor: pointer;
+      width: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click!</h1>
+</body>
+</html>

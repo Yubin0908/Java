@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    window.onload = () => {
+      document.querySelector('form').onsubmit = () => {
+        let pw = document.querySelector('input[name="pw"]');
+        let pw1 = document.getElementsByName('pw1')[0];
+        if(!pw.value.trim() || !pw1.value.trim()) {
+          alert('비밀번호를 입력해주세요.');
+          pw.focus();
+          return false;
+        } else if (pw.value.trim() != pw1.value.trim()) {
+          alert('비밀번호가 일치하지 않습니다.');
+          pw.value = '';
+          pw1.value = '';
+          pw.focus();
+          return false;
+      };
+    };
+    };
+  </script>
+  <style>
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <p>pw <input type="password" name="pw"><br></p>
+    <p>pw <input type="password" name="pw1"><br></p>
+    <p><input type="submit"></p>
+  </form>
+</body>
+</html>

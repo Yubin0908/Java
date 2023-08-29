@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //mouse over시 이미지 변경
+    //mouse out시 이미지 변경
+    var img = document.getElementsByTagName("img");
+    img.addEventListener("mouseover", function() {
+      this.src = 'img/'
+    });
+    img.addEventListener("mouseout", function() {
+      img.src = "img/0over.jpg";
+    });
+
+  </script>
+</head>
+<body>
+  <div id="#wrap" onmouseover="mouseover()">
+    <img src="img/0out.jpg" alt="Tutorial">
+    <img src="img/1out.jpg" alt="Example">
+    <img src="img/2out.jpg" alt="Special">
+    <img src="img/3out.jpg" alt="Link">
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      width: 1000px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    #wrap input[type="submit"] {
+      margin-top: 20px;
+      padding: 5px;
+    }
+    #wrap input[type="button"], #wrap input[type="text"] {
+      padding: 5px;
+    }
+  </style>
+  <script>
+    let confirm = () => {
+      let child = open('5_confirm.html', '', 'width=350, height=200, left=150 bottom=150');
+      if(!child) {
+        alert('팝업 차단을 해주세요.');
+      };
+    };
+    let active = () => {
+      let idconfirmed = document.getElementById('idconfirmed').value;
+      let idTag = document.getElementById('id');
+      if(idconfirmed != 1) {
+        alert('아이디 중복체크를 해주세요.');
+        return false;
+      } else if(!idTag.value.trim()) {
+        alert('아이디를 입력해주세요.');
+        idTag.focus();
+        return false;
+      }
+    /* if(id.value === '') {
+        alert('아이디를 입력해주세요.');
+        return false;
+      } else if (idconfirmed.value == 0) {
+        alert('아이디 중복체크를 해주세요.');
+      } */
+      return true;
+    };
+  </script>
+</head>
+<body>
+
+  <div id="wrap">
+    <form action="" onsubmit="active()">
+      <input type="hidden" id="idconfirmed" value="0">
+      <p>아이디 <input type="text" id="id" name="id">
+        <input type="button" value="중복확인" onclick="confirm()">
+      </p>
+      <input type="submit" value="회원가입">
+    </form>
+  </div>
+</body>
+</html>

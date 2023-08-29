@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    window.onload = () => {
+      document.getElementById('modifyID').value = opener.document.getElementById('id').value;
+    };
+    send = () => {
+      opener.document.getElementById('id').value = document.getElementById('modifyID').value;
+      opener.document.getElementById('idconfirmed').value = 1;
+      close();
+    }
+  </script>
+</head>
+<body>
+  <p>ID <input type="text" id="modifyID">
+    <input type="button" value="체크">
+  </p>
+  <input type="submit" onclick="send()" value="아이디사용">
+</body>
+</html>
