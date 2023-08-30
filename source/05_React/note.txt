@@ -1,0 +1,13 @@
+React : 유사 html tag 생성
+ - 대소문자 구분함.
+
+
+ < 예시 tag - Component>
+<Header></Header>
+
+<input type="button" onclick="~~~:></input>
+
+<Footer></Footer>
+
+< React 구동 >
+public/index.html > src/index.js가 연동되있음.

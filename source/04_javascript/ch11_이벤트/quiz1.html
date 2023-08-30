@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+<head>
   <meta charset="UTF-8">
   <title></title>
   <script>
-    //mouse over시 이미지 변경
-    //mouse out시 이미지 변경
-    var img = document.getElementsByTagName("img");
-    img.addEventListener("mouseover", function() {
-      this.src = 'img/'
-    });
-    img.addEventListener("mouseout", function() {
-      img.src = "img/0over.jpg";
-    });
+    window.onload = () => {
+      const img = document.getElementsByTagName("img");
 
+      for (let idx = 0; idx < img.length; idx++) {
+        // mouseover 시 동작하는 event
+        img[idx].addEventListener("mouseover", function() {
+          const imageNum = this.getAttribute("src").slice(0, -7);
+          this.setAttribute("src", imageNum + "over.jpg"); // src 속성
+          this.setAttribute("alt", imageNum + "over.jpg"); // alt 속성
+        });
+        // mouseout 시 동작하는 event
+        img[idx].addEventListener("mouseout", function() {
+          const imageNum = this.getAttribute("src").slice(0, -8);
+          this.setAttribute("src", imageNum + "out.jpg"); // src 속성
+          this.setAttribute("alt", imageNum + "out.jpg"); // alt 속성
+        });
+      }
+    }
   </script>
 </head>
 <body>
-  <div id="#wrap" onmouseover="mouseover()">
+  <div id="wrap">
     <img src="img/0out.jpg" alt="Tutorial">
     <img src="img/1out.jpg" alt="Example">
     <img src="img/2out.jpg" alt="Special">

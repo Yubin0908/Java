@@ -1,0 +1,12 @@
+[React 개발환경구축]
+
+
+- React : 사용자 정의 태그를 만들어 주는 기술 중 하나. '이하' componet라고 부름
+
+- component 정의 : 1. 가독성 2. 재사용성 3. 유지보수
+
+[명령어]
+- 프로젝트 생성 : 생성할 폴더의 prompt에서 create-react-app .
+- 프로젝트 시작 : npm run start or npm start
+- 배포 : npm rus build (build생성)
+- 배포서버실행 : npm install -g serve
