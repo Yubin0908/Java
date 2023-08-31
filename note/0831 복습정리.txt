@@ -1,0 +1,28 @@
+[component 생성 단계]
+
+1. Component 생성
+ - class [className] extends Component{} 
+ # className은 대문자로 시작
+
+2. Props 추가
+ - 구조 : {this.props.*}
+ - 예시 : <Subject title={this.props.title}, sub={this.props.sub}>
+	 <Content title="HTML" desc="HTML is HyperText Markup Language.">
+
+3. Component 파일 분리
+  - 각 Component별로 각각 별도로 분리하기
+  - import, export 필수로 해야함.
+	# App.js : import className from 파일경로
+	# 각 Component : (상단)import React, { component } from 'react'
+			(하단)export default TOC
+4. State, key 설정(생성자)
+  - Props : 사용자 잆장에서 component를 사용할 때 필요한 데이터
+  - State : props값에 따라 내부에서 구현에 필요한 데이터
+ - 예시 :
+	constructor(props) {
+		super(props);
+		this.state = {}
+	}
+
+5. Event 추가
+  - e.preventDefault(); : Tag의 기본적인 동작방식을 제한함.

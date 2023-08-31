@@ -4,3 +4,12 @@
   font-weight: bold;
   font-size: 2em;
 }
+
+.App li {
+  list-style: none;
+}
+
+.App a {
+  text-decoration: none;
+  color: white;
+}
