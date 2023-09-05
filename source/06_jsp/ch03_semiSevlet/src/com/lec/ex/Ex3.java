@@ -21,6 +21,7 @@ public class Ex3 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println(  "<html>"
 					+ "<head>"
+					+ "<link href=\"css/layout.css\" rel=\"stylesheet\">"
 					+ "</head>"
 					+ "<body>"
 					+ "<h2>요청하신 " + num + "단의 구구단은 아래와 같습니다.</h2>");
