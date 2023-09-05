@@ -1,0 +1,13 @@
+[ JSP 란? ] : html문서 안에 동적인 웹 어플리케이션을 만들기 위해 js코드를 삽입한 문서
+
+[ JSP 특징 ]
+ - 동적 웹어플리케이션 컴포넌트(JSP,HTML 등 웹 어플리케이션을 이루는 요소)
+ - *.JSP 확장자 사용
+ - Client의 요청에 동적으로 작동함, 응답은 html로 응답
+ - JSP는 Servlet으로 변환되어 실행됨(컴파일 - Tomcat)
+
+[ project 용어 ]
+ - Context root : Server에서 각 프로젝트를 구분해 주는 이름
+ - web.xml을 먼저 Parsing후 웹페이지 가 가동됨.
+
+ 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table {
+			border: 1px solid blue;
+			width: 300px;
+			height: 250px;
+			text-align: center;
+		}
+		input[type=text], input[type=password] {
+			padding: 5px;
+			border: 2px solid blue;
+			outline: none !important;
+		}
+		input[type=submit] {
+			background-color: skyblue;
+			padding: 8px 30px;
+		}
+	</style>
+</head>
+<body>
+	<form action="7_loginPro.jsp" method="post">
+		<table>
+				<th>로그인화면</th>
+        <tr>
+				<td>이 &nbsp;&nbsp; 름</td>
+        <td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id"></td>
+				</tr>
+				<td>패스워드</td>
+				<td><input type="password" name="pw"></td>
+				
+				<tr><td><input type="submit" value="로그인"></td></tr>
+      
+		</table>
+	</form>
+</body>
+</html>
