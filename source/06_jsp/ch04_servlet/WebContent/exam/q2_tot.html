@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		fieldset {
+			width:300px;
+		}
+	</style>
+	<script>
+		// 자연수 체크
+  	window.onload = () => {
+    	document.querySelector('form').onsubmit = (e) => {
+      	const input = document.getElementsByName('insu')[0];
+        const inputValue = Number(input.value);
+
+        if (isNaN(inputValue) || inputValue <= 0) {
+          alert('올바른 정수를 숫자를 입력해주세요.');
+          e.preventDefault();
+        }
+      }
+    };
+	</script>
+</head>
+<body>
+	<!-- 누적합 계산 -->
+	<fieldset>
+		<legend>누적하고 싶은 최종 수 </legend>
+		<form action="../Q2_tot">
+			<input type="number" name="insu">
+			<input type="submit" value="누적결과">
+		</form>
+	</fieldset>
+</body>
+</html>

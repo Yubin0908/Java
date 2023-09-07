@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ch02_semiJSP</name>
+	<name>BBS</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -30,7 +30,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1693960618888</id>
+			<id>1693915537118</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

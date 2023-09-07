@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+	<link	href="../css/join.css" rel="stylesheet">
+	<script>
+		window.onload = () => {
+			document.querySelector('form').onsubmit = () => {
+			var p1 = document.getElementsByClassName('pw')
+			var p2 = document.getElementsByClassName('pwChk')
+	
+			if (p1.value != p2.value) {
+		  	alert('비밀번호가 일치하지 않습니다');
+				pw.value = '';
+				pwChk.value = '';
+				pw.focus();
+				return false;
+			}
+			return true;
+		};
+	};
+	</script>
+</head>
+	<body>
+		<div id="joinForm_wrap">
+			<div id="join_title">
+				회원가입
+			</div>
+			<form action="../Join" method="post">
+				<table>
+					<tr style="display: none;">
+						<td><input type="hidden" name="hidden" value="xx"></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="name" class="name" required autofocus></td>
+					</tr>
+					<tr>
+						<td>아이디</td>
+						<td><input type="text" name="id" class="id" required></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password" name="pw" class="pw" required></td>
+					</tr>
+					<tr>
+						<td>비밀번호확인</td>
+						<td><input type="password" name="pwchk" class="pwChk" required></td>
+					</tr>
+					<tr>
+						<td>생년월일</td>
+						<td><input type="date" name="date" class="birth"></td>
+					</tr>
+					<tr>
+						<td>취미</td>
+						<td>
+							<input type="checkbox" name="hobby" value="독서">독서
+							<input type="checkbox" name="hobby" value="요리">요리
+							<input type="checkbox" name="hobby" value="운동">운동
+							<input type="checkbox" name="hobby" value="취침">취침
+						</td>
+					</tr>
+					<tr>
+						<td>성별</td>
+						<td>
+							<input type="radio" name="gender" value="m" selected>남자
+							<input type="radio" name="gender" value="f">여자</td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="email" name="mail" class="email"></td>
+					</tr>
+					<tr>
+						<td>메일수신</td>
+						<td>
+							<select name="ad" multiple="multiple" class="mailSend">
+								<option value="광고">광고</option>
+								<option value="배송">배송</option>
+								<option value="공지" selected>공지</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			<div class="btn">
+				<input type="submit" class="joinBtn_style" value="가입하기">
+				<input type="reset" class="joinBtn_style" value="다시하기">
+				<input type="button" class="joinBtn_style" value="뒤로가기" onclick="history.back();">
+			</div>
+		</form>
+		</div>
+	</body>
+</html>

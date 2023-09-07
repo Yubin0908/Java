@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table {
+			border: 1px solid chocolate;
+			background-color: #ffe271;
+			text-align: center;
+		}
+		td {
+			border: 1px solid white;
+		}
+
+	</style>
+	
+</head>
+<body>
+	<table>
+		<form action="../Q3" metrod="post">
+			<caption>게시판</caption>
+			<tr>
+				<td><p>제 목 </p></td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td><p>작 성 자</p></td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td><p>내용 </p></td>
+				<td><textarea name="text" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="저장"></td>
+				<td><input type="reset" value="초기화"></td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>

@@ -1,0 +1,4 @@
+CREATE DATAB
+ASE BBS;
+
+

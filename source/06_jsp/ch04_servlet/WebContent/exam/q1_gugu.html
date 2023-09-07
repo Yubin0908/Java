@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+			border: 1px solid blue;
+			width: 350px;
+			height: 150px;
+			margin: 5px;
+		} 
+	</style>
+	<script>
+		window.onload = () => {
+			document.querySelector('form').onsubmit = () => {
+				var options = document.getElementsByTagName('option');
+				var selectedCnt = 0;
+				for (var i = 0; i < options.length; i++) {
+					if (options[i].selected) {
+						selectedCnt++;
+					}
+				}
+				if (!selectedCnt) { 
+					alert('한개 이상 선택해주세요.');
+					return false;
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<form action="../Q1_ququ" method="get">
+	<h2>2~9단까지 원하는 구구단 입력</h2>
+		<select multiple="multiple" name="su">
+			<option value="2">2단</option>
+			<option value="3">3단</option>
+			<option value="4">4단</option>
+			<option value="5">5단</option>
+			<option value="6">6단</option>
+			<option value="7">7단</option>
+			<option value="8">8단</option>
+			<option value="9">9단</option>
+		</select>
+		<input type="submit" value="구구단 출력">
+		<input type="button" value="경고" onclick="alert('form태그 안의 버튼은 input 타입 button으로 만들어야 함.')">
+	</form>
+</body>
+</html>
