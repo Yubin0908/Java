@@ -4,11 +4,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JSP 게시판 웹사이트</title>
+	<title>Insert title here</title>
 </head>
 <body>
-	<script>
-		location.href = 'main.jsp'; // main 페이지로 강제 이동
-	</script>
+	<%response.sendRedirect("lect2_innerObject/ex2_memo.jsp"); %>
 </body>
 </html>

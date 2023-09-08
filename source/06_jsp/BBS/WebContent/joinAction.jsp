@@ -20,6 +20,17 @@
 </head>
 <body>
 	<%
+		String userID = null;
+		if(session.getAttribute("userID") != null) {
+			userID = (String) session.getAttribute("userID");
+		}
+	  if(userID != null) { // 로그인상태에선 회원가입을 막아줌
+		  PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('이미 로그인 되어 있습니다.')");
+			script.println("location.href = 'main.jsp'");
+			script.println("</script>");
+	  }
 		if (user.getUserID() == null || user.getUserPW() == null || user.getUserName() == null || user.getUserGender() == null || user.getUserEmail() == null) {
 			// Empty Form
 				PrintWriter script = response.getWriter();
@@ -38,6 +49,7 @@
 					script.println("</script>");
 				}
 				else { // Success
+					session.setAttribute("userID", user.getUserID());
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("location.href = 'main.jsp'");
