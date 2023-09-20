@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+#footer_wrap {
+  width: 1400px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+}
+.logo_f {
+  width: 200px;
+  float: left;
+  line-height: 100px;
+}
+.logo_f img {
+  width: 200px;
+  height: 90px;
+}
+.info {
+  width: 800px;
+  float: left;
+  overflow: hidden;
+}
+.customer {
+  width: 240px;
+  float: left;
+  font-size: .9em;
+  
+}
+.info_text_footer {
+  width: 560px;
+  float: left;
+  color: #aaa;
+}
+.guide {
+  float: right;
+  line-height: 100px;
+}
+.guide a {
+  margin-left: 20px;
+  margin-right: 20px;
+}

@@ -5,22 +5,26 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link href="<%=conPath %>/css/header.css" rel="stylesheet">
+	<link href="css/header.css" rel="stylesheet">
 </head>
 <body>
-	<div id="header">
+	<div id="header" class="fixed_header">
 		<div id="lnb">
 			<div class="lnb_left">
 				<ul>
-					<li><a href="<%=conPath%>/login.jsp">로그인</a></li>
-					<li><a href="<%=conPath%>/signin.jsp">회원가입</a></li>
-					<li><a href="<%=conPath%>/custom.jsp">고객센터</a></li>
+					<li><a href="login.jsp">로그인</a></li>
+					<li><a href="joinagree.jsp">회원가입</a></li>
+					<li><a href="custom.jsp">고객센터</a></li>
 				</ul>
 			</div>
 			<div class="logo">
-				LOGO
+				<a href="main.jsp"><img src="img/logo/logo_trans.png" alt="logo"></a>
 			</div>
 			<div class="lnb_right">
+        <form>
+          <input type="text" name="search">
+          <input type="submit" value="">
+        </form>
 			</div>
 		</div>
 		<div id="gnb">
@@ -30,7 +34,7 @@
 						<li><a href="#">멍이랑 냥이랑</a>
 							<div class="gnb_depth gnb_depth_01">
 								<ul>
-									<li><a href="<%=conPath%>/about.jsp">About</a></li>
+									<li><a href="about.jsp">About</a></li>
 								</ul>
 							</div>
 						</li>
@@ -41,9 +45,9 @@
 						<li><a href="#">강아지</a>
 							<div class="gnb_depth gnb_depth_02">
 								<ul>
-									<li><a href="<%=conPath%>/dog_all.jsp">전체 보기</a></li>
-									<li><a href="<%=conPath%>/dog_type.jsp">견종별 보기</a></li>
-									<li><a href="<%=conPath%>/dog_loc.jsp">지점별 보기</a></li>
+									<li><a href="dog_all.jsp">전체 보기</a></li>
+									<li><a href="dog_type.jsp">견종별 보기</a></li>
+									<li><a href="dog_loc.jsp">지점별 보기</a></li>
 								</ul>
 							</div>
 						</li>
@@ -54,9 +58,9 @@
 						<li><a href="#">고양이</a>
 							<div class="gnb_depth gnb_depth_03">
 								<ul>
-									<li><a href="<%=conPath%>/cat_all.jsp">전체 보기</a></li>
-									<li><a href="<%=conPath%>/cat_type.jsp">묘종별 보기</a></li>
-									<li><a href="<%=conPath%>/cat_loc.jsp">지점별 보기</a></li>
+									<li><a href="cat_all.jsp">전체 보기</a></li>
+									<li><a href="cat_type.jsp">묘종별 보기</a></li>
+									<li><a href="cat_loc.jsp">지점별 보기</a></li>
 								</ul>
 							</div>
 						</li>
@@ -67,8 +71,8 @@
 						<li><a href="#">고객 게시판</a>
 							<div class="gnb_depth gnb_depth_04">
 								<ul>
-									<li><a href="<%=conPath%>/interview.jsp">가족 인터뷰</a></li>
-									<li><a href="<%=conPath%>/review.jsp">가족 리뷰</a></li>
+									<li><a href="interview.jsp">가족 인터뷰</a></li>
+									<li><a href="review.jsp">가족 리뷰</a></li>
 								</ul>
 							</div>
 						</li>
@@ -79,8 +83,8 @@
 						<li><a href="#">service</a>
 							<div class="gnb_depth gnb_depth_05">
 								<ul>
-									<li><a href="<%=conPath%>/cat_hotel.jsp">고양이 호텔</a></li>
-									<li><a href="<%=conPath%>/dog_hotel.jsp">강아지 호텔</a></li>
+									<li><a href="cat_hotel.jsp">고양이 호텔</a></li>
+									<li><a href="dog_hotel.jsp">강아지 호텔</a></li>
 								</ul>
 							</div>
 						</li>
@@ -91,10 +95,10 @@
 						<li><a href="#">system</a>
 							<div class="gnb_depth gnb_depth_06">
 								<ul>
-									<li><a href="<%=conPath%>/notice.jsp">공지사항</a></li>
-									<li><a href="<%=conPath%>/before.jsp">사전점검 서비스</a></li>
-									<li><a href="<%=conPath%>/sales.jsp">협력업체</a></li>
-									<li><a href="<%=conPath%>/after.jsp">사후 서비스</a></li>
+									<li><a href="notice.jsp">공지사항</a></li>
+									<li><a href="before.jsp">사전점검 서비스</a></li>
+									<li><a href="sales.jsp">협력업체</a></li>
+									<li><a href="after.jsp">사후 서비스</a></li>
 								</ul>
 							</div>
 						</li>
@@ -103,5 +107,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/header.js"></script>
 </body>
 </html>

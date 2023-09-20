@@ -37,7 +37,7 @@
 			%>
 			<p style="text-align: center;">
 				사원명 
-				<input type="text" name="search" class="btn" value="<%=searchStr %>">
+				<input type="text" name="search" class="btn" value="<%=searchStr%>">
 				<input type="submit" value="검색" style="width:100px;">
 				<tr><th>No.</th><th>사번</th><th>이름</th><th>직책</th><th>상사사번</th><th>입사일</th><th>급여</th><th>부서번호</th><th>부서명</th></tr>
 
