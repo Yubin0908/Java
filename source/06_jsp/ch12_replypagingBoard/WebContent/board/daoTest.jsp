@@ -18,7 +18,7 @@
 	<% 
 		BoardDao bDao = BoardDao.getInstance();
 		out.println("1. 글 목록 출력");
-		ArrayList<BoardDto> dtos = bDao.listBoard();
+		ArrayList<BoardDto> dtos = bDao.listBoard(11,13);
 		for(BoardDto dto : dtos) {
 			out.println("</h3>" + dto + "<br>");
 		}

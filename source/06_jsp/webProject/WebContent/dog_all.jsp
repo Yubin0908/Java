@@ -18,7 +18,7 @@
       <p>책임분양가 : 500</p>
       <a href="#">분양 문의</a>
     </div>
-    <div class="card">
+    <div class="card">w
       <img src="img/cat/겨울_노르웨이숲_01.jpg" alt="고양이 이미지">
       <h2>샴 고양이</h2>
       <p>연령: 1년</p>

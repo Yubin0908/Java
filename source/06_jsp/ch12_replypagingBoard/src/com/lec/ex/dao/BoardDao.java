@@ -76,6 +76,47 @@ public class BoardDao {
 		}
 		return dto;
 	}
+//	-- 1. 글목록(Startrow ~ EndRow)
+	public ArrayList<BoardDto> listBoard(int startRow, int endRow) {
+		ArrayList<BoardDto> dto = new ArrayList<BoardDto>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BGROUP DESC, BSTEP) A) WHERE RN BETWEEN ? AND ?";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int bid = rs.getInt("bid");
+				String bname = rs.getString("bname");
+				String btitle = rs.getString("btitle");
+				String bcontent = rs.getString("bcontent");
+				String bemail = rs.getString("bemail");
+				int bhit = rs.getInt("bhit");
+				String bpw = rs.getString("bpw");
+				int bgroup = rs.getInt("bgroup");
+				int bstep = rs.getInt("bstep");
+				int bindent = rs.getInt("bindent");
+				String bip = rs.getString("bip");
+				Timestamp bdate = rs.getTimestamp("bdate");
+				dto.add(new BoardDto(bid, bname, btitle, bcontent, bemail, bhit, bpw, bgroup, bstep, bindent, bip, bdate));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!= null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return dto;
+	}
 //	-- 2. 전체 글 갯수
 	public int getContentCnt() {
 		int totalCnt = 0;
@@ -395,6 +436,66 @@ public class BoardDao {
 			}
 		}
 			return result;
+	}
+//	-- 9. 답변 글 저장 전 BSTEP 조정단계
+	private void preReplyStep(int bgroup, int bstep) {
+		int cnt = 0;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = "UPDATE BOARD SET BSTEP=BSTEP+1" + 
+					 "  WHERE BGROUP=? AND BSTEP>?";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, bgroup);
+			ps.setInt(2, bstep);
+			cnt = ps.executeUpdate();
+			System.out.println("기존 답변글 " + cnt + "개 bstep 조정됨.");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(ps!=null) ps.close();
+				if(conn!= null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+//	-- 10. 답변글 쓰기	
+	public int reply(BoardDto dto) {
+		int result = FAIL;
+		preReplyStep(dto.getBgroup(), dto.getBstep()); // 전처리 단계
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = "INSERT INTO BOARD (BID, BNAME, BTITLE, BCONTENT, BEMAIL, BPW, BGROUP, BSTEP, BINDENT, BIP)" + 
+				"  VALUES (BOARD_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getBname());
+			ps.setString(2, dto.getBtitle());
+			ps.setString(3, dto.getBcontent());
+			ps.setString(4, dto.getBemail());
+			ps.setString(5, dto.getBpw());
+			ps.setInt(6, dto.getBgroup());
+			ps.setInt(7, dto.getBstep()+1);
+			ps.setInt(8, dto.getBindent()+1);
+			ps.setString(9, dto.getBip());
+			result = ps.executeUpdate();
+			System.out.println("답글 작성 성공");
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + " 답변글 예외 발생 : " + dto);
+		} finally {
+			try {
+				if(ps!=null) ps.close();
+				if(conn!= null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return result;
 	}
 }
 	

@@ -76,6 +76,49 @@ public class BoardDao {
 		}
 		return dto;
 	}
+//	-- 1. 글목록(Startrow ~ EndRow)
+	public ArrayList<BoardDto> listBoard(int startRow, int endRow) {
+		ArrayList<BoardDto> dto = new ArrayList<BoardDto>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "SELECT *" + 
+				"  FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BGROUP DESC) A)" + 
+				"  WHERE RN BETWEEN ? AND ?";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int bid = rs.getInt("bid");
+				String bname = rs.getString("bname");
+				String btitle = rs.getString("btitle");
+				String bcontent = rs.getString("bcontent");
+				String bemail = rs.getString("bemail");
+				int bhit = rs.getInt("bhit");
+				String bpw = rs.getString("bpw");
+				int bgroup = rs.getInt("bgroup");
+				int bstep = rs.getInt("bstep");
+				int bindent = rs.getInt("bindent");
+				String bip = rs.getString("bip");
+				Timestamp bdate = rs.getTimestamp("bdate");
+				dto.add(new BoardDto(bid, bname, btitle, bcontent, bemail, bhit, bpw, bgroup, bstep, bindent, bip, bdate));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!= null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return dto;
+	}
 //	-- 2. 전체 글 갯수
 	public int getContentCnt() {
 		int totalCnt = 0;
@@ -396,6 +439,7 @@ public class BoardDao {
 		}
 			return result;
 	}
+	
 }
 	
 	

@@ -15,6 +15,7 @@
 </head>
 <body>
 	<%
+		String pageNum = request.getParameter("pageNum");
 		dto.setBip(request.getRemoteAddr());
 		BoardDao bDao = BoardDao.getInstance();
 		int result = bDao.modifyBoard(dto);
@@ -23,7 +24,7 @@
 	%>
 			<script>
 				alert('수정 완료');
-				location.href="<%=conPath%>/board/content.jsp?bid=<%=bid%>&after=u";
+				location.href="<%=conPath%>/board/content.jsp?bid=<%=bid%>&after=u&pageNum=<%=pageNum%>";
 			</script>
 	<%
 		} else {

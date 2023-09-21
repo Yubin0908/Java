@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="<%=conPath %>/css/footer.css">
 </head>
 <body>
   <footer>
@@ -15,7 +15,7 @@
     <hr>
     <div id="footer_wrap">
       <div class="logo_f">
-        <a href="#"><img src="img/logo/logo_trans.png" alt="logo"></a>
+        <a href="#"><img src="<%=conPath %>/img/logo/logo_trans.png" alt="logo"></a>
       </div>
       <div class="info">
         <div class="customer">

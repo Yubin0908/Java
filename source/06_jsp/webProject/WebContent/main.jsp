@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<% String conPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -320,7 +321,7 @@
       </div>
 		</div>
 	</div>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="common/footer.jsp"/>
 <script src="js/slide.js"></script>
 </body>
 </html>
