@@ -53,7 +53,7 @@
 					if(dto.getBindent() > 0) { // 답변글 일 때
 						int width = dto.getBindent()*15;
 		%>
-						<img src="<%=conPath %>/img/level.gif" style="width: <%=width %>px; vertical-align:middle;">
+						<img src="<%=conPath %>/img/level.gif" style="width: <%=width %>px;">
 						<img src="<%=conPath %>/img/re.gif">
 		<%
 					}

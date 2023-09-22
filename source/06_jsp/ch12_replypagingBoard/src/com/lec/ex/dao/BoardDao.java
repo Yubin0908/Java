@@ -464,7 +464,7 @@ public class BoardDao {
 	}
 	
 //	-- 10. 답변글 쓰기	
-	public int reply(BoardDto dto) {
+	public int replyBoard(BoardDto dto) {
 		int result = FAIL;
 		preReplyStep(dto.getBgroup(), dto.getBstep()); // 전처리 단계
 		Connection conn = null;

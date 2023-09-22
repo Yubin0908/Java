@@ -16,10 +16,14 @@
 		String pageNum = request.getParameter("pageNum");
 		int bid = Integer.parseInt(request.getParameter("bid"));
 		BoardDao bDao = BoardDao.getInstance();
-		BoardDto oldDto = bDao.getBoard(bid);
+		BoardDto oldDto = bDao.getBoard(bid); // 원글의 정보(bgroup, bstep, bindent)
 	%>
-	원글 정보 : <%=oldDto %>
 	<form action="<%=conPath%>/board/replyPro.jsp" method="post">
+		<input type="hidden" name="pageNum" value="<%=pageNum%>">
+		<input type="hidden" name="bid" value="<%=oldDto.getBid() %>">
+		<input type="hidden" name="bgroup" value="<%=oldDto.getBgroup() %>">
+		<input type="hidden" name="bstep" value="<%=oldDto.getBstep() %>">
+		<input type="hidden" name="bindent" value="<%=oldDto.getBindent() %>">
 		<table>
 			<caption>답변글쓰기</caption>
 			<tr>
@@ -28,7 +32,7 @@
 			</tr>
 			<tr>
 				<th>글제목</th>
-				<td><input type="text" name="btitle" required></td>
+				<td><input type="text" name="btitle" required value="reply: <%=oldDto.getBtitle() %>"></td>
 			</tr>
 			<tr>
 				<th>본문</th>
@@ -46,7 +50,7 @@
 				<td colspan="2">
 					<input type="submit" value="글쓰기" class="btn">
 					<input type="reset" value="초기화" class="btn">
-					<input type="button" value="목록" class="btn" onclick="location.href='list.jsp'">
+					<input type="button" value="목록" class="btn" onclick="location.href='list.jsp?pageNum=<%=pageNum%>'">
 				</td>
 			</tr>
 		</table>
