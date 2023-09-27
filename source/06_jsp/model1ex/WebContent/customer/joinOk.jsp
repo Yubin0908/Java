@@ -27,6 +27,7 @@
 			if(result == CustomerDao.SUCCESS) {
 				session.setAttribute("cid", dto.getCid());
 				response.sendRedirect("loginForm.jsp");
+	
 			} else {
 	%>
 		<script>
@@ -38,7 +39,7 @@
 		} else {
 	%>
 		<script>
-			alert('중복된 아이디입니다.');
+			alert('중복된 아이디입니다. 다른 아이디를 사용하세요.');
 			history.back();
 		</script>
 	<%

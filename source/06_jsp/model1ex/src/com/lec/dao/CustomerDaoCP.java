@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -22,11 +23,16 @@ public class CustomerDaoCP {
 	public static final int SUCCESS = 1;
 	public static final int FAIL = 0;
 	
+	private static CustomerDaoCP instance = new CustomerDaoCP();
+	public static CustomerDaoCP getInstanse() {
+		return instance;
+	}
+	
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		try {
 			Context ctx = new InitialContext();
-			DataSource ds = (DataSource)ctx.lookup("java:cpmp/env/jdbc/Oracle11g");
+			DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/Oracle11g");
 			conn = ds.getConnection();
 		} catch (NamingException e) {
 			System.out.println(e.getMessage());
@@ -110,8 +116,8 @@ public class CustomerDaoCP {
 			ps.setString(1, cid);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				String dbPw = rs.getString("pw");
-				if(dbPw.equals("pw")) {
+				String dbPw = rs.getString("cpw");
+				if(dbPw.equals("cpw")) {
 					return LOGIN_SUCCESS;
 				} else {
 					return LOGIN_FAIL_PW;
@@ -197,5 +203,70 @@ public class CustomerDaoCP {
 			}
 		}
 		return result;
+	}
+
+//	-- 회원리스트
+	public ArrayList<CustomerDto> listCustomer(int startRow, int endRow) {
+		ArrayList<CustomerDto> dto = new ArrayList<CustomerDto>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "SELECT * " + 
+					 "  FROM (SELECT ROWNUM RN, CID, CPW, CNAME, CEMAIL, CADDRESS " + 
+					 "      FROM (SELECT * FROM CUSTOMER ORDER BY CID))" + 
+					 "  WHERE RN BETWEEN ? AND ?";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				String cid = rs.getString("cid");
+				String cpw = rs.getString("cpw");
+				String cname = rs.getString("cname");
+				String cemail = rs.getString("cemail");
+				String caddress = rs.getString("caddress");
+				dto.add(new CustomerDto(cid, cpw, cname, null, cemail, caddress, null, null));
+			}	
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		return dto;
+	}
+//	-- 가입한 회원수
+	public int CustomerCnt() {
+		int cuscnt = 0;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) CNT FROM CUSTOMER";
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			cuscnt = rs.getInt("cnt");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return cuscnt;
 	}
 }

@@ -25,7 +25,7 @@
 			if(method.equals("null")) {
 				response.sendRedirect("../main/main.jsp");
 			} else {
-				response.sendRedirect(method+"Form.jsp");
+				response.sendRedirect(method+".jsp");
 			}
 			
 		} else if(result == CustomerDao.LOGIN_FAIL_PW) {
