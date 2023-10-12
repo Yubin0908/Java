@@ -16,6 +16,8 @@
 			padding-top:30px;
 		}
 	</style>
+	
+	
 </head>
 <body>
 	<jsp:include page="../main/header.jsp"/>
@@ -52,8 +54,9 @@
 						if(d.getFhit()>10){
 							out.print("<img src='../img/hot.gif'>");
 						}
-						out.print("<a href='fboardContent.jsp?fid="+d.getFid()+"&pageNum="+pageNum+
-																					"'>"+d.getFtitle()+"</a> ");
+						/* out.print("<a href='fboardContent.jsp?fid="+d.getFid()+"&pageNum="+pageNum+
+																					"'>"+d.getFtitle()+"</a> "); */
+						out.print(d.getFtitle());
 						if(d.getFilename()!=null){
 							out.print("<img src='../img/fileup.jpg' width='10'></td>");
 						}
@@ -90,3 +93,14 @@
 	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+	$(document).ready(function() {
+		$('tr').click(function() {
+			var fid = $(this).children().eq(0).text().trim();
+			if(!isNaN(Number(fid))) {
+				location.href = 'fboardContent.jsp?pageNum=<%=pageNum%>&fid='+fid;
+			}
+		});
+	});
+</script>
