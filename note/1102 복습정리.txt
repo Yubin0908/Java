@@ -1,0 +1,24 @@
+1. 개념
+
+DI(Dependency Injection) : 의존 주입  
+              &
+IOC컨테이너(Inversion of Control) : 컴포넌트의 재사용을 용이하게 해주고 단위 테스트를 쉽게 할 수 있도록
+                                                        지원하는 스프링
+
+Spring에서는 주로 객체를 외부에서 생성하여 사용하는 방법을 사용.
+
+=====================================================================================
+{ .xml file }
+resources - Spring Bean 생성
+
+<bean>태그 - id/class 지정 [ id = 객체명, class = class파일]
+property 태그 - [name = 변수, value = 값]
+
+{ main }
+main 에서 parsing 할 xml 지정 필요 [classpath:applicationCTX.xml]
+getBean ("Bean id", class.class)
+
+
+======================================================================================
+2. DI 사용 시, 장점
+ - 추구 유지보수 시, Java파일 수정 없이 할 수 있다.
