@@ -1,0 +1,20 @@
+[ Spring MVC 개요]
+ - 기존 JSP 프로젝트에서 WEB-INF 내부 *.jsp 는 실행 되지않지만, spring 프로젝트에서는 실행가능
+    (단, jsp 파일 단독으로는 실행되지 않음)
+
+- Parsing Process
+1. Web을 통해 클라이언트의 요청이 들어오면 DispatcherServlet에서 요청을 받음.
+2. 1에서 받은 요청을 HandlerMapping, Handler Adapter에게 작업을 보내어 요청URL과 매칭되는 컨트롤러를 찾음
+3. 요청내용을 컨트롤러에 처리를 요청 
+  ※ 컨트롤러에 Annotation @Controller로 지정하여 프레임워크에게 컨트롤러라는걸 명시해 줌.
+4. 요청 내용에 따라 수행하는게 다르고, 컨트롤러의 실행 결과는 NodelAndView로 변환한 후 return
+5. View를 출력하기 위해 ViewResolver를 통해 해당 View를 검색하여 요청 결과의 View로 응답
+
+## 요청 -> DispatcherServlet -> Controller -> DispatcherServlet -> ViewResolver -> View
+
+
+[ Controller ]
+ - Controller 는 @Controller 라는 Annotation으로 반드시 명시해 주어야한다.
+ - @RequestMapping Annotation 사용하여 요청경로 지정
+ - view Name return
+ - 매개변수 Model 객체를 이용해서 데이터를 담아서 처리
