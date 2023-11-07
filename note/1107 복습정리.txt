@@ -1,0 +1,28 @@
+[ FormData ]
+ - 입력받은 데이터를 받아 처리하는 기법
+
+1. @ModelAttribute 를 사용하는 방법
+## 모든 jsp 페이지에서 뿌릴 데이터가 있을 경우 아래와 같이 처리 할 수 있다.
+ - Class 내부에 Annotation @ModelAttribute() 사용하여 모델 이름 선언.
+ - Controller 내부적으로 자동으로 parsing하여 자동으로 객체안에 Add & Settig
+
+2. @RequestParam() 을 사용하는 방법
+## 함수의 매개변수로 지정 : @RequestParam("param Name") Type VarName
+- 함수 내 Model이용하여 addAttribute하여 객체 전달
+
+3. 매개변수에 변수선언(☆)
+## 함수의 매개변수로 파라미터값과 동일한 변수 선언 시 자동으로 해당 파라미터 값이 변수에 저장됨.
+- int 파라미터값은 별도의 형변환 없이 자동으로 int형변환 되어 저장.
+
+4. dto 매개변수선언 및 setter이용(Model 이용)
+## 함수의 매개변수로 매개변수가 없는 생성자함수를 지정하여 변수선언
+- 해당 방법 사용 시, 매개변수 없는 생성자함수와, setter 필요함.
+
+5. dto 매개변수 선언(Model 생략)(☆)
+## 함수의 매개변수로 생성자함수를 지정
+
+6. 매개변수로 @ModelAttribute() Annotation 이용하는 방법(☆)
+## 함수의 매개변수로 생성자함수 지정 과 Annotation을 이용하여 model에 add
+
+[ RequestMapping ]
+## Get 방식과 Post 방식
