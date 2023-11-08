@@ -1,0 +1,11 @@
+[ Spring MVC 게시판 ]
+Interface service에서 Model로 데이터 받음.
+public void execute(Model model);
+
+list : page 매개변수 받아 Model에 값을 저장하여 service로 전달.
+
+Model은 map과 같은 형태를 취하고 있음 (key, Value);
+##(String, Object) => model.asMap();
+
+
+DAO에 @Repositoty 어노테이션 사용으로 DAO 객체생성없이 의존 주입하여 사용
