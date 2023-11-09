@@ -1,0 +1,7 @@
+[ JDBC Template ]
+- JDBC Template Bean 은 DataSource Bean을 의존함.
+1. root-context.xml에 bean생성
+2. bean class = DriverManagerDataSource의 import 경로 입력
+3. bean name = dataSource 이름 지정
+4. context-property location = db.properties파일의 절대경로 지정
+5. bean 내부 property로 데이터 속성지정

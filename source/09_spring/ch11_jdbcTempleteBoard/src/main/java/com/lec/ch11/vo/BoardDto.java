@@ -2,6 +2,7 @@ package com.lec.ch11.vo;
 
 import java.sql.Date;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,5 @@ public class BoardDto {
 	private int bstep;
 	private int bindent;
 	private String bip;
-	
-	
+
 }
