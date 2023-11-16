@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="11000" shutdown="SHUTDOWN">
+ --><Server port="8001" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="12000" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="9000" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ch06_mvc" path="/ch06" reloadable="true" source="org.eclipse.jst.jee.server:ch06_mvc"/><Context docBase="ch07_controller" path="/ch07" reloadable="true" source="org.eclipse.jst.jee.server:ch07_controller"/><Context docBase="ch08_formData" path="/ch08" reloadable="true" source="org.eclipse.jst.jee.server:ch08_formData"/><Context docBase="ch09_RequestMapping" path="/ch09" reloadable="true" source="org.eclipse.jst.jee.server:ch09_RequestMapping"/><Context docBase="uitest" path="/uitest" reloadable="true" source="org.eclipse.jst.jee.server:uitest"/><Context docBase="ch10_mvcBoard" path="/ch10" reloadable="true" source="org.eclipse.jst.jee.server:ch10_mvcBoard"/><Context docBase="ch11_jdbcTempleteBoard" path="/ch11" reloadable="true" source="org.eclipse.jst.jee.server:ch11_jdbcTempleteBoard"/><Context docBase="ch12_fileUpload" path="/ch12" reloadable="true" source="org.eclipse.jst.jee.server:ch12_fileUpload"/><Context docBase="ch13_mybatis-l" path="/ch13" reloadable="true" source="org.eclipse.jst.jee.server:ch13_mybatis-l"/></Host>
+      <Context docBase="ch15_mybatis-ll" path="/ch15" reloadable="true" source="org.eclipse.jst.jee.server:ch15_mybatis-ll"/><Context docBase="ch15_mybatis-II" path="/ch15e" reloadable="true" source="org.eclipse.jst.jee.server:ch15_mybatis-II"/><Context docBase="ch11_jdbcTempleteBoard" path="/ch10" reloadable="true" source="org.eclipse.jst.jee.server:ch11_jdbcTempleteBoard"/><Context docBase="ch16_mybatisBoard" path="/ch16" reloadable="true" source="org.eclipse.jst.jee.server:ch16_mybatisBoard"/><Context docBase="ch16_mybatisFileBoard" path="/ch16e" reloadable="true" source="org.eclipse.jst.jee.server:ch16_mybatisFileBoard"/><Context docBase="ch17_mailSender" path="/ch17" reloadable="true" source="org.eclipse.jst.jee.server:ch17_mailSender"/><Context docBase="ch18_bookUpMember" path="/ch18" reloadable="true" source="org.eclipse.jst.jee.server:ch18_bookUpMember"/><Context docBase="ch18_bookUpMember_sch" path="/ch18sch" reloadable="true" source="org.eclipse.jst.jee.server:ch18_bookUpMember_sch"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -5,3 +5,4 @@
 3. bean name = dataSource 이름 지정
 4. context-property location = db.properties파일의 절대경로 지정
 5. bean 내부 property로 데이터 속성지정
+

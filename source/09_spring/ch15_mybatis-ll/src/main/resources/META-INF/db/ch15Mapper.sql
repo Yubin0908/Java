@@ -1,0 +1,53 @@
+ -- EMP.xml id = empList
+SELECT * FROM EMP ORDER BY EMPNO; -- 출력기준
+
+SELECT * FROM
+  (SELECT ROWNUM RN, A.* FROM (SELECT * FROM EMP ORDER BY EMPNO) A)
+  WHERE RN BETWEEN 6 AND 10;
+  
+ -- EMP.xml id = empDeptList
+SELECT E.*, DNAME, LOC FROM EMP E, DEPT D WHERE E.DEPTNO=D.DEPTNO ORDER BY EMPNO; -- 출력기준
+ 
+SELECT * FROM
+  (SELECT ROWNUM RN, A.* FROM (SELECT E.*, DNAME, LOC FROM EMP E, DEPT D WHERE E.DEPTNO=D.DEPTNO ORDER BY EMPNO) A)
+  WHERE RN BETWEEN 6 AND 10;
+  
+ -- EMP.xml id = totCnt
+SELECT COUNT(*) CNT FROM EMP;
+
+ -- EMP.xml id = detail
+SELECT * FROM EMP WHERE EMPNO=7369;
+
+ -- EMP.xml id = managerList
+SELECT * FROM EMP WHERE EMPNO IN (SELECT MGR FROM EMP);
+
+ -- EMP.xml id = insert
+INSERT INTO EMP VALUES (9000, '홍길동', 'MANAGER', 7902, '23/11/10', 9000, 100, 20);
+
+ -- EMP.xml id = update
+UPDATE EMP SET
+  ENAME = '신길동',
+  JOB = 'SALESMAN',
+  MGR = '7902',
+  HIREDATE = '23/11/09',
+  SAL = 5000,
+  COMM = 1000,
+  DEPTNO = 40
+  WHERE EMPNO = 9000;
+  
+  -- EMP.xmp id = delete
+DELETE FROM EMP WHERE EMPNO=9000;
+
+COMMIT;
+
+ -- DEPT.xml id = deptList
+ SELECT * FROM DEPT;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
