@@ -21,6 +21,34 @@
    BINFO = '자바 개발 서적'
    WHERE BNUM = 5;
  
+ -- 검색기능
+ -- OPTION == NULL일 때 OR OPTION == BOOK_PEOPLE
+SELECT COUNT(*) FROM BOOK WHERE BTITLE LIKE '%'||'1'||'%' OR BWRITER LIKE '%'||'강'||'%'; -- 검색갯수
+
+SELECT * FROM
+  (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOOK WHERE BTITLE LIKE '%'||'1'||'%' OR BWRITER LIKE '%'||'강'||'%') A)
+  WHERE RN BETWEEN 4 AND 10;
+ -- OPTION == BOOK일 때
+ SELECT COUNT(*) FROM BOOK WHERE BTITLE LIKE '%'||'1'||'%'; -- 검색갯수
+  SELECT * FROM
+    (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOOK WHERE BTITLE LIKE '%'||'1'||'%') A)
+    WHERE RN BETWEEN 4 AND 10;
+ -- OPTION == PEOPLE일 때
+ SELECT COUNT(*) FROM BOOK WHERE BWRITER LIKE '%'||'강'||'%'; -- 검색갯수
+  SELECT * FROM
+    (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOOK WHERE BWRITER LIKE '%'||'강'||'%') A)
+    WHERE RN BETWEEN 4 AND 10;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  COMMIT;
  SELECT * FROM MEMBER;
  -- Member.xml id = idComfirm (resultType = int)
@@ -42,5 +70,6 @@ SELECT MID, MPW FROM MEMBER WHERE MID = 'aaa' AND MPW = '1';
    
    COMMIT;
    
+
  
  

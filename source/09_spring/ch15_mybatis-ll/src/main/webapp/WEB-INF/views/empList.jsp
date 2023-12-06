@@ -24,7 +24,7 @@
 				<a href="${conPath }/write.do">직원등록</a>
 			</td>
 		</tr>
-		<tr><th>역번호</th><th>사번</th><th>이름</th><th>입사일</th><th>급여</th><th>상여</th></tr>
+		<tr><th>번호</th><th>사번</th><th>이름</th><th>입사일</th><th>급여</th><th>상여</th></tr>
 		<c:forEach items="${empList }" var="emp">
 			<tr>
 				<td>${num }</td>
@@ -37,7 +37,7 @@
 			<c:set var="num" value="${num-1}"/>
 		</c:forEach>
 	</table>
-	<%-- <div id="paging">
+	 <div id="paging">
 		<c:if test="${paging.startPage > paging.blockSize }">
 			[ <a href="${conPath }/empList.do?pageNum=${paging.startPage-1}">이전</a> ]
 		</c:if>
@@ -52,7 +52,7 @@
 		<c:if test="${paging.endPage < paging.pageCnt }">
 			[ <a href="${conPath }/empList.do?pageNum=${paging.endPage+1 }">다음</a> ]
 		</c:if>
-	</div> --%>
+	</div>
 </body>
 </html>
 
