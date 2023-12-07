@@ -62,3 +62,49 @@ app.get('/list', (req, res) => {
     res.render('list.ejs', {posts:result});
   });
 });
+
+app.delete('/delete', (req, res) => {
+  // _id parameter 값의 _id인 post 삭제
+  var _id = Number(req.body._id);
+  db.collection('post').deleteOne({_id : _id}, (err, result) => {
+    if(err) return console.log(err);
+    console.log(_id, '번 post 삭제 됨.');
+    res.status(200).send({msg : _id + '번 post 삭제 됨.'});
+  });
+});
+
+app.get('/detail/:id', (req, res) => {
+  var id = parseInt(req.params.id);
+  db.collection('post').findOne({_id : id}, (err, result) => {
+    if(err) return console.log(err);
+    res.render('detail.ejs', {post:result});
+  });
+});
+
+app.get('/update/:id', (req, res) => {
+  var id = Number(req.params.id);
+  db.collection('post').findOne({_id : id}, (err, result) => {
+    if(err) return console.log(err);
+    res.render('update.ejs', {post:result});
+  });
+});
+
+app.post('/update', (req, res) => {
+  console.log('수정내용 :',req.body);
+  const _id = Number(req.body._id);
+  db.collection('post').updateOne({_id : _id}, {$set : {title: req.body.title, date: req.body.date}},
+    (err, result) => {
+      if(err) return console.log(err);
+      res.redirect('/detail/'+_id);
+  });
+});
+
+app.put('/update', (req, res) => {
+  const _id = Number(req.body._id);
+  db.collection('post').updateOne({_id : _id}, {$set : {title: req.body.title, date: req.body.date}},
+    (err, result) => {
+      if(err) return console.log(err);
+      res.status(200).send({msg : _id+'번째 할일 수정'});
+    });
+});
+
