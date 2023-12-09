@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="text-align: center">
+	<th:block th:replace="fragment/header :: headerFragment"/>
+
+	<h1 th:text="'넘어온 데이터' + ${greeting}">Hello, Boot</h1>
+	<p>
+		<button onclick="location.href='/friend/join'">회원가입</button>
+		<button onclick="location.href='/friend/list'">목록</button>
+	</p>
+
+	<th:block th:replace="fragment/footer :: footerFragment"/>
+</body>
+</html>
