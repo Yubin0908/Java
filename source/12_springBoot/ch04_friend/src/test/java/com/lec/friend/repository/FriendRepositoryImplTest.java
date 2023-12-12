@@ -48,4 +48,14 @@ public class FriendRepositoryImplTest {
     assertThat(result.size()).isEqualTo(2);
     System.out.println("findAll TEST 완료");
   }
+
+  @Test
+  public void findById() {
+    Friend friend = new Friend("홍길동", "010-0000-0000");
+    repository.save(friend);
+    Friend result = repository.findById(friend.getId()).get();
+    assertThat(friend).isEqualTo(result);
+    System.out.println("findById 테스트 완료!");
+
+  }
 }

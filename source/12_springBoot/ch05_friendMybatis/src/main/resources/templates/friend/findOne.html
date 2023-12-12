@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <th:block th:replace="fragments/header::headerFragment"/>
+  <table>
+	  <caption>[[${friend.id}]]번 친구 상세보기</caption>
+	  <tr><th>아이디</th><td th:text="${friend.id}"></td></tr>
+	  <tr><th>이름</th><td th:text="${friend.name}"></td></tr>
+	  <tr><th>전화번호</th><td th:text="${friend.tel}"></td></tr>
+	  <tr>
+		  <td colspan="2">
+			  <button onclick="location='/friend/join'">친구등록</button>
+			  <button onclick="location='/friend/list'">친구목룍</button>
+			  <button onclick="location='/'">처음으로</button>
+		  </td>
+	  </tr>
+  </table>
+	<th:block th:replace="fragments/footer::footerFragment"/>
+</body>
+</html>

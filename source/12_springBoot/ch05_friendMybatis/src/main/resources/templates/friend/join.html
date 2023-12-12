@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script th:inline="javascript">
+		// let errMsg = [[${param.errMsg}]] // parameter로 받을 때
+		let errMsg = [[${errMsg}]]; // model로 받을 때
+		if(errMsg) {
+      alert(errMsg);
+		}
+	</script>
+</head>
+<body>
+  <th:block th:replace="fragments/header::headerFragment"/>
+  <form action="/friend/join" method="post">
+		<table>
+			<tr>
+				<td>
+					<input type="text" name="name" placeholder="이름을 입력하세요." required th:value="${friend == null ? '':friend.name}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="tel" placeholder="전화번호를 입력하세요.">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="친구등록">
+					<input type="button" value="친구목록" onclick="location='/friend/list'">
+					<input type="button" value="처음으로" onclick="location='/'">
+				</td>
+			</tr>
+		</table>
+  </form>
+	<th:block th:replace="fragments/footer::footerFragment"/>
+</body>
+</html>

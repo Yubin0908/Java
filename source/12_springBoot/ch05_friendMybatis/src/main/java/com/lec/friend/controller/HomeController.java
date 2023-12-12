@@ -19,4 +19,6 @@ public class HomeController {
     model.addAttribute("greeting", "Welcome 첫화면");
     return "home";
   }
+
+
 }

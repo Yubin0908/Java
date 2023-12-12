@@ -18,7 +18,7 @@ public class FriendRepositoryImpl implements FriendRepository{
 
   @Override
   public Optional<Friend> findById(Long id) {
-    return Optional.ofNullable(store.get(3));
+    return Optional.ofNullable(store.get(id));
   }
 
   @Override
